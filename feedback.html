@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تقييم الموقع</title>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header, footer {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    h2 {
+      color: #007BFF;
+    }
+
+    .stars {
+      font-size: 40px;
+      cursor: pointer;
+      direction: ltr;
+    }
+
+    .stars span {
+      color: gray;
+      transition: 0.3s;
+    }
+
+    .stars span.selected {
+      color: gold;
+    }
+
+    textarea {
+      margin-top: 20px;
+      width: 300px;
+      height: 100px;
+      border: 1px solid #007BFF;
+      border-radius: 10px;
+      padding: 10px;
+      display: none;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      display: none;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: green;
+    }
+
+    body.night-mode {
+      background-color: #333;
+      color: white;
+    }
+
+    header.night-mode,
+    footer.night-mode {
+      background-color: #222;
+    }
+
+    textarea.night-mode {
+      background-color: #444;
+      color: white;
+      border-color: #ccc;
+    }
+
+    button.night-mode {
+      background-color: #444;
+      color: white;
+    }
+
+    button.night-mode:hover {
+      background-color: #222;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>منصة كلمة</h1>
+  </header>
+
+  <main>
+    <h2>قيّم تجربتك</h2>
+    <div class="stars" id="stars">
+      <span data-value="1">★</span>
+      <span data-value="2">★</span>
+      <span data-value="3">★</span>
+      <span data-value="4">★</span>
+      <span data-value="5">★</span>
+    </div>
+    <textarea id="feedback" placeholder="شاركنا تجربتك..."></textarea>
+    <button id="submitBtn">إرسال التقييم</button>
+    <div class="message" id="message"></div>
+  </main>
+
+  <footer>
+    <p>منصة تعليم اللغات</p>
+  </footer>
+
+  <script>
+    const stars = document.querySelectorAll("#stars span");
+    const textarea = document.getElementById("feedback");
+    const submitBtn = document.getElementById("submitBtn");
+    const message = document.getElementById("message");
+    let selectedRating = 0;
+
+    stars.forEach(star => {
+      star.addEventListener("click", () => {
+        selectedRating = parseInt(star.getAttribute("data-value"));
+        updateStars(selectedRating);
+        textarea.style.display = "block";
+        submitBtn.style.display = "inline-block";
+      });
+    });
+
+    function updateStars(rating) {
+      stars.forEach((star, index) => {
+        star.classList.toggle("selected", index < rating);
+      });
+    }
+
+    submitBtn.addEventListener("click", () => {
+      if (selectedRating === 0 || textarea.value.trim() === "") {
+        alert("يرجى تقييم الموقع وكتابة تجربتك.");
+        return;
+      }
+
+      message.textContent = "شكرًا لتقييمك ❤️ سيتم تحويلك إلى الصفحة الرئيسية...";
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 3000);
+    });
+
+    if (localStorage.getItem("theme") === "night") {
+      document.body.classList.add("night-mode");
+      document.querySelector("header").classList.add("night-mode");
+      document.querySelector("footer").classList.add("night-mode");
+      textarea.classList.add("night-mode");
+      submitBtn.classList.add("night-mode");
+    }
+  </script>
+
+</body>
+</html>

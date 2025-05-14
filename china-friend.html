@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>التواصل مع أصدقاء من دول أخرى</title>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f0f8ff;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+    h2 {
+      color: #007BFF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .card {
+      background-color: #b3d7ff;
+      padding: 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+    body.dark-mode {
+      background: #333;
+      color: #fff;
+    }
+    header.dark-mode {
+      background-color: #222;
+    }
+    .card.dark-mode {
+      background-color: #444;
+      color: #fff;
+    }
+    .card.dark-mode p {
+      color: lightgray;
+    }
+    .mode-toggle {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span>Chinese Vocabulary - المفردات الأساسية الصينية</span>
+    <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+  </header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="china-goal.html">السابق</a>
+  </nav>
+
+  <div class="container">
+    <h2>Making Friends Internationally</h2>
+    <div class="grid">
+      <div class="card">朋友<br><p>صديق</p></div>
+      <div class="card">朋友关系<br><p>علاقة صداقة</p></div>
+      <div class="card">交友<br><p>التعرف على الأصدقاء</p></div>
+      <div class="card">社交<br><p>التواصل الاجتماعي</p></div>
+      <div class="card">互相帮助<br><p>مساعدة متبادلة</p></div>
+      <div class="card">共享<br><p>مشاركة</p></div>
+      <div class="card">信任<br><p>ثقة</p></div>
+      <div class="card">合作<br><p>تعاون</p></div>
+      <div class="card">共同兴趣<br><p>اهتمامات مشتركة</p></div>
+      <div class="card">尊重<br><p>احترام</p></div>
+      <div class="card">支持<br><p>دعم</p></div>
+      <div class="card">理解<br><p>فهم</p></div>
+      <div class="card">沟通<br><p>تواصل</p></div>
+      <div class="card">真诚<br><p>إخلاص</p></div>
+      <div class="card">聚会<br><p>اجتماع</p></div>
+      <div class="card">聊天<br><p>الدردشة</p></div>
+      <div class="card">聚集<br><p>التجمع</p></div>
+      <div class="card">交际<br><p>التفاعل</p></div>
+      <div class="card">邀请<br><p>دعوة</p></div>
+      <div class="card">友情<br><p>صداقة</p></div>
+      <div class="card">愉快<br><p>سعادة</p></div>
+      <div class="card">信件<br><p>رسالة</p></div>
+      <div class="card">合作伙伴<br><p>شريك</p></div>
+      <div class="card">分担<br><p>تقاسم</p></div>
+      <div class="card">礼物<br><p>هدية</p></div>
+      <div class="card">共度时光<br><p>قضاء الوقت معًا</p></div>
+      <div class="card">回忆<br><p>ذكريات</p></div>
+      <div class="card">关心<br><p>اهتمام</p></div>
+      <div class="card">交流<br><p>تبادل</p></div>
+      <div class="card">朋友节<br><p>يوم الأصدقاء</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+      const header = document.querySelector('header');
+      header.classList.toggle('dark-mode');
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => card.classList.toggle('dark-mode'));
+      const button = document.querySelector('.mode-toggle');
+      button.textContent = button.textContent === '🌙' ? '🌞' : '🌙';
+    }
+
+    document.querySelectorAll('.card').forEach(card => {
+      const chineseText = card.childNodes[0].textContent.trim();
+      card.addEventListener('click', () => {
+        const utterance = new SpeechSynthesisUtterance(chineseText);
+        utterance.lang = 'zh-CN';
+        speechSynthesis.speak(utterance);
+      });
+    });
+  </script>
+</body>
+</html>

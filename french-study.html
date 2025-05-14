@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Vocabulaire Français - Étudier à l'étranger</title>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body { font-family: sans-serif; margin: 0; background: #e6f9fa; color: #000; transition: background-color 0.3s, color 0.3s; }
+    header { background-color: #007BFF; color: white; text-align: center; padding: 20px; font-size: 24px; font-weight: bold; }
+    nav { background-color: #007BFF; padding: 10px; display: flex; justify-content: center; gap: 20px; }
+    nav a { color: white; font-weight: bold; text-decoration: none; }
+    nav button { background-color: #007BFF; color: white; padding: 10px 15px; border: none; cursor: pointer; }
+    nav button:hover { background-color: #0056b3; }
+    .container { padding: 30px; text-align: center; }
+    h2 { color: #007BFF; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 900px; margin: auto; }
+    .card { background-color: #b3d7ff; padding: 20px; border-radius: 10px; color: #007BFF; font-weight: bold; cursor: pointer; }
+    .card p { margin: 5px 0 0; font-weight: normal; }
+
+    body.dark-mode { background-color: #121212; color: #e6e6e6; }
+    header.dark-mode { background-color: #333; color: white; }
+    nav.dark-mode { background-color: #333; }
+    nav.dark-mode a { color: #e6e6e6; }
+    nav.dark-mode button { background-color: #333; color: white; }
+    nav.dark-mode button:hover { background-color: #555; }
+    .container.dark-mode { color: #e6e6e6; }
+    h2.dark-mode { color: #4CAF50; }
+    .card.dark-mode { background-color: #444; color: #e6e6e6; }
+  </style>
+</head>
+<body>
+  <header>Vocabulaire Français - Étudier à l'étranger</header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="french-goal.html">السابق</a>
+    <button onclick="toggleDarkMode()">وضع الليل/النهار</button>
+  </nav>
+  <div class="container">
+    <h2>Étudier à l'étranger</h2>
+    <div class="grid">
+      <div class="card" onclick="speakText('Université')">Université <p>جامعة</p></div>
+      <div class="card" onclick="speakText('Étudiant')">Étudiant <p>طالب</p></div>
+      <div class="card" onclick="speakText('Bourse')">Bourse <p>منحة دراسية</p></div>
+      <div class="card" onclick="speakText('Inscription')">Inscription <p>تسجيل</p></div>
+      <div class="card" onclick="speakText('Visa étudiant')">Visa étudiant <p>تأشيرة طالب</p></div>
+      <div class="card" onclick="speakText('Cours')">Cours <p>دورة/محاضرة</p></div>
+      <div class="card" onclick="speakText('Professeur')">Professeur <p>أستاذ</p></div>
+      <div class="card" onclick="speakText('Campus')">Campus <p>الحرم الجامعي</p></div>
+      <div class="card" onclick="speakText('Logement')">Logement <p>سكن</p></div>
+      <div class="card" onclick="speakText('Stage')">Stage <p>تدريب</p></div>
+      <div class="card" onclick="speakText('Diplôme')">Diplôme <p>شهادة</p></div>
+      <div class="card" onclick="speakText('Échange')">Échange <p>تبادل</p></div>
+      <div class="card" onclick="speakText('Langue')">Langue <p>لغة</p></div>
+      <div class="card" onclick="speakText('Culture')">Culture <p>ثقافة</p></div>
+      <div class="card" onclick="speakText('Bibliothèque')">Bibliothèque <p>مكتبة</p></div>
+      <div class="card" onclick="speakText('Examen')">Examen <p>امتحان</p></div>
+      <div class="card" onclick="speakText('Résidence')">Résidence <p>سكن جامعي</p></div>
+      <div class="card" onclick="speakText('Transport')">Transport <p>نقل</p></div>
+      <div class="card" onclick="speakText('Cantine')">Cantine <p>كافتيريا</p></div>
+      <div class="card" onclick="speakText('Éducation')">Éducation <p>تعليم</p></div>
+      <div class="card" onclick="speakText('Étudier')">Étudier <p>يدرس</p></div>
+      <div class="card" onclick="speakText('Révision')">Révision <p>مراجعة</p></div>
+      <div class="card" onclick="speakText('Recherche')">Recherche <p>بحث</p></div>
+      <div class="card" onclick="speakText('Projet')">Projet <p>مشروع</p></div>
+      <div class="card" onclick="speakText('Frais')">Frais <p>رسوم</p></div>
+      <div class="card" onclick="speakText('Université partenaire')">Université partenaire <p>جامعة شريكة</p></div>
+      <div class="card" onclick="speakText('Certificat')">Certificat <p>شهادة</p></div>
+      <div class="card" onclick="speakText('Présence')">Présence <p>حضور</p></div>
+      <div class="card" onclick="speakText('Absence')">Absence <p>غياب</p></div>
+      <div class="card" onclick="speakText('Soutien')">Soutien <p>دعم</p></div>
+      <div class="card" onclick="speakText('Orientation')">Orientation <p>إرشاد</p></div>
+      <div class="card" onclick="speakText('Note')">Note <p>علامة</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      document.querySelector('header').classList.toggle('dark-mode');
+      document.querySelector('nav').classList.toggle('dark-mode');
+      document.querySelector('.container').classList.toggle('dark-mode');
+      document.querySelectorAll('.card').forEach(card => card.classList.toggle('dark-mode'));
+      document.querySelectorAll('h2').forEach(h => h.classList.toggle('dark-mode'));
+    }
+
+    function speakText(text) {
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'fr-FR'; 
+      window.speechSynthesis.speak(speech);
+    }
+  </script>
+</body>
+</html>

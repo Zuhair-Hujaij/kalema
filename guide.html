@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <link rel="shortcut icon" type="x-icon" href="C:\website\website\image\logo.png">
+  <title>منصة كلمة</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 40px;
+    }
+
+    footer {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e6e6e6;
+    }
+
+    header.dark-mode {
+      background-color: #333;
+    }
+
+    .navbar.dark-mode {
+      background-color: #333;
+    }
+
+    .nav-links a.dark-mode {
+      color: #e6e6e6;
+    }
+
+    footer.dark-mode {
+      background-color: #333;
+    }
+
+    /* Button style for dark mode toggle */
+    .toggle-btn {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .toggle-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <h1>شرح استخدام المنصة</h1>
+    <ul class="nav-links">
+      <li><a href="index.html">الرئيسية</a></li>
+    </ul>
+    <button class="toggle-btn" onclick="toggleDarkMode()">وضع الليل/النهار</button>
+  </nav>
+</header>
+
+<main>
+  <h2>كيفية استخدام المنصة</h2>
+  <ul>
+    <li>ابدأ باختيار اللغة التي تريد تعلمها من الصفحة الرئيسية.</li>
+    <li>اختر المهارة التي ترغب في تطويرها (مفردات، قواعد، نطق...)</li>
+    <li>يمكنك استخدام أدوات التحدث والاستماع لتحسين المهارات.</li>
+    <li>جرب الألعاب التعليمية لتحفيز التعلم بشكل ممتع.</li>
+    <li>تواصل مع المساعد الذكي لطرح أي استفسار.</li>
+    <li>سجل دخولك لحفظ تقدمك.</li>
+  </ul>
+</main>
+
+<footer>
+  <p>منصة تعليم اللغات</p>
+</footer>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    document.querySelector('header').classList.toggle('dark-mode');
+    document.querySelectorAll('.navbar').forEach(nav => nav.classList.toggle('dark-mode'));
+    document.querySelectorAll('.nav-links a').forEach(link => link.classList.toggle('dark-mode'));
+    document.querySelector('footer').classList.toggle('dark-mode');
+  }
+</script>
+
+</body>
+</html>

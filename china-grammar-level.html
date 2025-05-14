@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>اختر مستواك في قواعد اللغة</title>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+      color: #007BFF;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar {
+      background-color: #007BFF;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .mode-toggle {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .container {
+      padding: 40px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #007BFF;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .card a {
+      display: block;
+      background-color: white;
+      border: 2px solid #007BFF;
+      padding: 40px 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .card a:hover {
+      background-color: #cce5ff;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #333;
+      color: white;
+    }
+
+    .navbar.dark-mode {
+      background-color: #222;
+    }
+
+    .card a.dark-mode {
+      background-color: #444;
+      color: white;
+      border-color: #aaa;
+    }
+
+    .card a.dark-mode:hover {
+      background-color: #555;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html">الرئيسية</a>
+    <a href="china-goal.html">المفردات</a>
+    <a href="chinese-alphabet.html">الحروف</a>
+    <a href="chinese-audio.html">الاستماع</a>
+    <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+  </div>
+
+  <header>
+    اختر مستواك في قواعد اللغة
+  </header>
+
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="china-goal.html">المفردات</a>
+    <a href="chinese-alphabet.html">الحروف</a>
+    <a href="chinese-audio.html">الاستماع</a>
+  </nav>
+
+  <div class="container">
+    <h2>اختر المستوى المناسب لك:</h2>
+
+    <div class="grid">
+      <div class="card"><a href="china-easy-grammar.html">مبتدئ</a></div>
+      <div class="card"><a href="china-mid-grammar.html">متوسط</a></div>
+      <div class="card"><a href="china-pro-grammar.html">محترف</a></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('dark-mode');
+      const cards = document.querySelectorAll('.card a');
+      cards.forEach(card => card.classList.toggle('dark-mode'));
+      const button = document.querySelector('.mode-toggle');
+      button.textContent = button.textContent === '🌙' ? '🌞' : '🌙';
+    }
+  </script>
+
+</body>
+</html>

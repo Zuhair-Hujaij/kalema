@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>المساعد الذكي</title>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --bg-color: #f0f8ff;
+      --text-color: #003366;
+      --chat-bg: #ffffff;
+      --border-color: #3399ff;
+      --user-color: #0066cc;
+      --assistant-color: #003366;
+      --button-bg: #3399ff;
+      --button-hover: #267acc;
+      --tab-bg: #3399ff;
+      --tab-text: #ffffff;
+      --tab-hover: #267acc;
+    }
+
+    body.dark {
+      --bg-color: #1e1e2f;
+      --text-color: #e0e0f0;
+      --chat-bg: #2a2a3d;
+      --border-color: #5555aa;
+      --user-color: #66aaff;
+      --assistant-color: #cfcfff;
+      --button-bg: #5555aa;
+      --button-hover: #444488;
+      --tab-bg: #5555aa;
+      --tab-text: #ffffff;
+      --tab-hover: #444488;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .tabs-container {
+      width: 100%;
+      background-color: var(--tab-bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+    }
+
+    .tabs a {
+      color: var(--tab-text);
+      background-color: var(--tab-bg);
+      text-decoration: none;
+      padding: 15px 20px;
+      display: inline-block;
+      font-weight: bold;
+      transition: background 0.3s;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .tabs a:hover,
+    .tabs a.active {
+      background-color: var(--tab-hover);
+    }
+
+    .toggle-mode {
+      padding: 10px 15px;
+      margin: 5px;
+      background-color: white;
+      color: var(--tab-bg);
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .chat-box {
+      background-color: var(--chat-bg);
+      border: 2px solid var(--border-color);
+      border-radius: 15px;
+      padding: 20px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 15px rgba(0, 0, 255, 0.1);
+      margin-top: 20px;
+      display: none;
+    }
+
+    .chat-box.active {
+      display: block;
+    }
+
+    .messages {
+      height: 300px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+      padding-right: 10px;
+    }
+
+    .message {
+      margin: 10px 0;
+    }
+
+    .user {
+      text-align: right;
+      color: var(--user-color);
+      font-weight: bold;
+    }
+
+    .assistant {
+      text-align: left;
+      color: var(--assistant-color);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      outline: none;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: var(--button-bg);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: var(--button-hover);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tabs-container">
+    <div class="tabs">
+      <a href="index.html">الرئيسية</a>
+    </div>
+    <button class="toggle-mode" onclick="toggleMode()">🌓</button>
+  </div>
+
+  <div class="chat-box active" id="chat">
+    <div class="messages" id="chatMessages"></div>
+    <input type="text" id="userInput" placeholder="اكتب الأمر هنا..." onkeydown="handleKey(event)" />
+    <button onclick="sendMessage()">إرسال</button>
+  </div>
+
+  <div class="chat-box" id="favorites">
+    <p>⭐ هنا ستظهر الرسائل التي قمت بحفظها كمفضلة.</p>
+  </div>
+
+  <div class="chat-box" id="settings">
+    <p>⚙️ إعدادات التطبيق قيد التطوير.</p>
+  </div>
+
+  <script>
+    const responses = {
+      "السلام عليكم": "🤖: وعليكم السلام ورحمة الله وبركاته،<br>أهلاً وسهلاً! كيف يمكنني مساعدتك اليوم؟",
+      "معنى كلمة مسابقة بالانجليزي": "🤖: Competition – إذا كانت تتعلق بالتنافس بين أفراد أو فرق (مثل مسابقة رياضية أو علمية).",
+      "معنى كلمة مرحبا بالتركي": "🤖: Merhaba (تُنطق: مِرهَبا) ",
+      "كم حرف في اللغة الصينية": `🤖: اللغة الصينية لا تُستخدم فيها حروف أبجدية مثل العربية أو الإنجليزية، بل تُكتب باستخدام الرموز (الحروف الصينية أو "الرموز الصينية" - 汉字 / Hànzì)، وكل رمز يمثل مقطعًا صوتيًا أو كلمة كاملة.<br><br>
+      🔹 عدد الرموز الصينية:<br>
+      هناك أكثر من 50,000 رمزًا صينيًا في القواميس الكبيرة.<br><br>
+      لكن الشخص الصيني المتعلم يستخدم فقط حوالي:<br>
+      3,000 إلى 4,000 رمز في القراءة والكتابة اليومية.<br><br>
+      الصحف والكتب تستخدم عادة حوالي 2,500 - 3,500 رمز.`,
+      "ما هي افضل ثلاث جامعات في الشرق الاوسط لتعليم اللغات": `🤖:<br>1. الجامعة الأمريكية في القاهرة (AUC) – مصر<br>
+2. جامعة الأزهر – مصر<br>
+3. الجامعة الأردنية – الأردن`,
+      "معنى كلمة تنافس بالاسباني": `🤖: Competir<br><br>
+وهي فعل يعني "يتنافس" أو "ينافس".`,
+      "شكرا": "🤖: على الرحب والسعة! 😊<br>إذا احتجت أي مساعدة أخرى في الترجمة أو أي موضوع آخر، فأنا هنا دائماً.<br><br>بالتوفيق! 🌟"
+    };
+
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const message = input.value.trim();
+      const chat = document.getElementById("chatMessages");
+
+      if (message === "") return;
+
+      chat.innerHTML += `<div class="message user">🧑‍💻: ${message}</div>`;
+
+      setTimeout(() => {
+        if (responses[message]) {
+          chat.innerHTML += `<div class="message assistant">${responses[message]}</div>`;
+        } else {
+          chat.innerHTML += `<div class="message assistant">🤖: عذرًا، لا يمكنني الرد على هذا الأمر حالياً. جرب أمرًا آخر.</div>`;
+        }
+
+        chat.scrollTop = chat.scrollHeight;
+      }, 1500); 
+
+      input.value = "";
+    }
+
+    function handleKey(event) {
+      if (event.key === "Enter") {
+        sendMessage();
+      }
+    }
+
+    function showTab(event, tabId) {
+      event.preventDefault();
+      document.querySelectorAll(".chat-box").forEach(div => div.classList.remove("active"));
+      document.getElementById(tabId).classList.add("active");
+
+      document.querySelectorAll(".tabs a").forEach(a => a.classList.remove("active"));
+      event.currentTarget.classList.add("active");
+    }
+
+    function toggleMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+</body>
+</html>

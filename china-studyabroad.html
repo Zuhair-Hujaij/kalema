@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>الدراسة بالخارج</title>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .navbar button {
+      background: #ffcc00;
+      color: black;
+      padding: 10px 15px;
+      cursor: pointer;
+      border: none;
+      font-size: 16px;
+    }
+    .navbar button:hover {
+      background: #e6b800;
+    }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+    h2 {
+      color: #007BFF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .card {
+      background-color: #b3d7ff;
+      padding: 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+
+    body.light-mode {
+      background: #e6f9fa;
+      color: #000;
+    }
+    .container.light-mode {
+      background: #f9f9f9;
+    }
+
+    body.dark-mode {
+      background: #2d2d2d;
+      color: #fff;
+    }
+    .container.dark-mode {
+      background: #444;
+    }
+    h2.dark-mode {
+      color: #007BFF;
+    }
+    .card.dark-mode {
+      background-color: #444;
+      color: #fff;
+    }
+  </style>
+</head>
+<body class="light-mode">
+  <header>
+    Chinese Vocabulary - المفردات الأساسية الصينية
+  </header>
+  <nav class="navbar">
+    <a href="index.html">الرئيسية</a>
+    <a href="china-goal.html">السابق</a>
+    <button onclick="toggleMode()">الوضع الليلي / النهاري</button>
+  </nav>
+
+  <div class="container">
+    <h2>Study Abroad</h2>
+    <div class="grid">
+      <div class="card" onclick="speak('学费')">学费<br><p>رسوم الدراسة</p></div>
+      <div class="card" onclick="speak('奖学金')">奖学金<br><p>منحة دراسية</p></div>
+      <div class="card" onclick="speak('课程')">课程<br><p>دورة دراسية</p></div>
+      <div class="card" onclick="speak('学位')">学位<br><p>درجة علمية</p></div>
+      <div class="card" onclick="speak('大学')">大学<br><p>جامعة</p></div>
+      <div class="card" onclick="speak('语言课程')">语言课程<br><p>دورة لغوية</p></div>
+      <div class="card" onclick="speak('住宿')">住宿<br><p>إقامة</p></div>
+      <div class="card" onclick="speak('校园')">校园<br><p>حرم الجامعة</p></div>
+      <div class="card" onclick="speak('签证')">签证<br><p>تأشيرة</p></div>
+      <div class="card" onclick="speak('国际学生')">国际学生<br><p>طلاب دوليون</p></div>
+      <div class="card" onclick="speak('托福')">托福<br><p>اختبار التوفل</p></div>
+      <div class="card" onclick="speak('雅思')">雅思<br><p>اختبار الآيلتس</p></div>
+      <div class="card" onclick="speak('语言交换')">语言交换<br><p>تبادل لغوي</p></div>
+      <div class="card" onclick="speak('学习')">学习<br><p>دراسة</p></div>
+      <div class="card" onclick="speak('文化交流')">文化交流<br><p>التبادل الثقافي</p></div>
+      <div class="card" onclick="speak('外国文化')">外国文化<br><p>ثقافة أجنبية</p></div>
+      <div class="card" onclick="speak('留学生活')">留学生活<br><p>الحياة الدراسية بالخارج</p></div>
+      <div class="card" onclick="speak('入学')">入学<br><p>الالتحاق</p></div>
+      <div class="card" onclick="speak('录取通知书')">录取通知书<br><p>خطاب القبول</p></div>
+      <div class="card" onclick="speak('研究生')">研究生<br><p>دراسات عليا</p></div>
+      <div class="card" onclick="speak('本科')">本科<br><p>درجة بكاليروس</p></div>
+      <div class="card" onclick="speak('语言障碍')">语言障碍<br><p>حاجز لغوي</p></div>
+      <div class="card" onclick="speak('住宿费')">住宿费<br><p>رسوم الإقامة</p></div>
+      <div class="card" onclick="speak('日常生活')">日常生活<br><p>الحياة اليومية</p></div>
+      <div class="card" onclick="speak('生活费')">生活费<br><p>تكاليف المعيشة</p></div>
+      <div class="card" onclick="speak('文化差异')">文化差异<br><p>الفروق الثقافية</p></div>
+      <div class="card" onclick="speak('助学金')">助学金<br><p>مساعدة دراسية</p></div>
+      <div class="card" onclick="speak('校园生活')">校园生活<br><p>الحياة في الحرم الجامعي</p></div>
+      <div class="card" onclick="speak('学习资源')">学习资源<br><p>موارد الدراسة</p></div>
+      <div class="card" onclick="speak('语言能力')">语言能力<br><p>القدرة اللغوية</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const container = document.querySelector('.container');
+      const h2Elements = document.querySelectorAll('h2');
+      const cards = document.querySelectorAll('.card');
+
+      if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        container.classList.remove('light-mode');
+        container.classList.add('dark-mode');
+        h2Elements.forEach(h2 => h2.classList.add('dark-mode'));
+        cards.forEach(card => card.classList.add('dark-mode'));
+      } else {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        container.classList.remove('dark-mode');
+        container.classList.add('light-mode');
+        h2Elements.forEach(h2 => h2.classList.remove('dark-mode'));
+        cards.forEach(card => card.classList.remove('dark-mode'));
+      }
+    }
+
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'zh-CN';
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>

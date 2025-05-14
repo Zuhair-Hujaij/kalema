@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Vocabulaire Français - Développement professionnel</title>
+  <link rel="shortcut icon" type="x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body { 
+      font-family: sans-serif; 
+      margin: 0; 
+      background: #e6f9fa; 
+      transition: background-color 0.3s, color 0.3s; 
+    }
+    header { 
+      background-color: #007BFF; 
+      color: white; 
+      text-align: center; 
+      padding: 20px; 
+      font-size: 24px; 
+      font-weight: bold; 
+    }
+    nav { 
+      background-color: #007BFF; 
+      padding: 10px; 
+      display: flex; 
+      justify-content: center; 
+      gap: 20px; 
+    }
+    nav a { 
+      color: white; 
+      font-weight: bold; 
+      text-decoration: none; 
+    }
+    nav button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    nav button:hover {
+      background: #0056b3;
+    }
+    .container { 
+      padding: 30px; 
+      text-align: center; 
+    }
+    h2 { 
+      color: #007BFF; 
+    }
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+      gap: 20px; 
+      max-width: 900px; 
+      margin: auto; 
+    }
+    .card { 
+      background-color: #b3d7ff; 
+      padding: 20px; 
+      border-radius: 10px; 
+      color: #007BFF; 
+      font-weight: bold; 
+      cursor: pointer;
+    }
+    .card p { 
+      margin: 5px 0 0; 
+      font-weight: normal; 
+    }
+
+    body.night-mode {
+      background-color: #333;
+      color: #fff;
+    }
+    header.night-mode {
+      background-color: #444;
+    }
+    .card.night-mode {
+      background-color: #666;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Vocabulaire Français - Développement professionnel
+  </header>
+
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="french-goal.html">السابق</a>
+    <button onclick="toggleNightMode()">🌙 الوضع الليلي / النهاري</button>
+  </nav>
+
+  <div class="container">
+    <h2>Développement professionnel</h2>
+    <div class="grid">
+      <div class="card" onclick="speakWord('Ordinateur')">Ordinateur <p>حاسوب</p></div>
+      <div class="card" onclick="speakWord('Clavier')">Clavier <p>لوحة مفاتيح</p></div>
+      <div class="card" onclick="speakWord('Souris')">Souris <p>فأرة</p></div>
+      <div class="card" onclick="speakWord('Écran')">Écran <p>شاشة</p></div>
+      <div class="card" onclick="speakWord('Logiciel')">Logiciel <p>برنامج</p></div>
+      <div class="card" onclick="speakWord('Télécharger')">Télécharger <p>تحميل</p></div>
+      <div class="card" onclick="speakWord('Navigateur')">Navigateur <p>متصفح</p></div>
+      <div class="card" onclick="speakWord('Connexion')">Connexion <p>اتصال</p></div>
+      <div class="card" onclick="speakWord('Mot de passe')">Mot de passe <p>كلمة مرور</p></div>
+      <div class="card" onclick="speakWord('Utilisateur')">Utilisateur <p>مستخدم</p></div>
+      <div class="card" onclick="speakWord('Fichier')">Fichier <p>ملف</p></div>
+      <div class="card" onclick="speakWord('Dossier')">Dossier <p>مجلد</p></div>
+      <div class="card" onclick="speakWord('Lien')">Lien <p>رابط</p></div>
+      <div class="card" onclick="speakWord('Site web')">Site web <p>موقع إلكتروني</p></div>
+      <div class="card" onclick="speakWord('Serveur')">Serveur <p>خادم</p></div>
+      <div class="card" onclick="speakWord('Application')">Application <p>تطبيق</p></div>
+      <div class="card" onclick="speakWord('Réseau')">Réseau <p>شبكة</p></div>
+      <div class="card" onclick="speakWord('Codage')">Codage <p>ترميز</p></div>
+      <div class="card" onclick="speakWord('Programmation')">Programmation <p>برمجة</p></div>
+      <div class="card" onclick="speakWord('Télétravail')">Télétravail <p>العمل عن بُعد</p></div>
+      <div class="card" onclick="speakWord('Cloud')">Cloud <p>السحابة</p></div>
+      <div class="card" onclick="speakWord('Stockage')">Stockage <p>تخزين</p></div>
+      <div class="card" onclick="speakWord('Téléconférence')">Téléconférence <p>مؤتمر عبر الإنترنت</p></div>
+      <div class="card" onclick="speakWord('Sécurité')">Sécurité <p>أمان</p></div>
+      <div class="card" onclick="speakWord('Cryptage')">Cryptage <p>تشفير</p></div>
+      <div class="card" onclick="speakWord('Mise à jour')">Mise à jour <p>تحديث</p></div>
+      <div class="card" onclick="speakWord('Compétences')">Compétences <p>مهارات</p></div>
+      <div class="card" onclick="speakWord('Technologie')">Technologie <p>تكنولوجيا</p></div>
+      <div class="card" onclick="speakWord('Innovation')">Innovation <p>ابتكار</p></div>
+      <div class="card" onclick="speakWord('Raccourci')">Raccourci <p>اختصار</p></div>
+      <div class="card" onclick="speakWord('Imprimante')">Imprimante <p>طابعة</p></div>
+      <div class="card" onclick="speakWord('Interface')">Interface <p>واجهة</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleNightMode() {
+      document.body.classList.toggle('night-mode');
+      document.querySelector('header').classList.toggle('night-mode');
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => card.classList.toggle('night-mode'));
+    }
+
+    function speakWord(word) {
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = 'fr-FR';
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+
+</body>
+</html>

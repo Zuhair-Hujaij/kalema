@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>نصوص تعليمية - الصينية</title>
+    <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+    <style>
+        body { font-family: Arial; margin: 0; background: #fff; }
+        .navbar {
+            background: #007BFF;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+        }
+        .navbar a { color: white; padding: 14px; text-decoration: none; display: block; }
+        .navbar a:hover { background: #0056b3; }
+        .navbar button {
+            background: #ffcc00;
+            color: black;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        .navbar button:hover { background: #e6b800; }
+        .content { padding: 20px; }
+        h2 { color: #007BFF; }
+        p { font-size: 16px; line-height: 1.6; }
+        button { background: #007BFF; color: white; border: none; padding: 8px 12px; margin-bottom: 10px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+
+        body.light-mode { background: #fff; color: #000; }
+        .content.light-mode { background: #f9f9f9; }
+
+        body.dark-mode { background: #2d2d2d; color: #fff; }
+        .content.dark-mode { background: #444; }
+        h2.dark-mode { color: #ffcc00; }
+    </style>
+</head>
+<body class="light-mode">
+    <div class="navbar">
+        <a href="index.html">الرئيسية</a>
+        <a href="tools.html">السابق</a>
+        <button onclick="toggleMode()">الوضع الليلي / النهاري</button>
+    </div>
+    <div class="content">
+        <h2>中文教育文本</h2>
+        <button onclick="speakText('chineseText', 'zh')">🔊 استمع للنص الصيني</button>
+        <p id="chineseText">
+            生活充满了成长和学习的机会。每一段经历，无论好坏，都能教会我们一些东西。
+            学会面对它们会使我们变得更加智慧，能够更好地抓住未来的机会。永远不要停止学习！
+        </p>
+
+        <h2>النص المترجم إلى العربية</h2>
+        <button onclick="speakText('arabicText', 'ar')">🔊 استمع للنص العربي</button>
+        <p id="arabicText">
+            الحياة مليئة بالفرص للنمو والتعلم. كل تجربة، سواء كانت جيدة أو سيئة، تعلمنا شيئًا.
+            تعلم كيفية التعامل مع هذه التجارب يجعلنا أشخاصًا أكثر حكمة وقادرين على الاستفادة من الفرص
+            التي سيقدمها لنا المستقبل. لا تتوقف أبدًا عن التعلم!
+        </p>
+    </div>
+
+    <script>
+        function speakText(elementId, lang) {
+            const text = document.getElementById(elementId).innerText;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            speechSynthesis.speak(utterance);
+        }
+
+        function toggleMode() {
+            const body = document.body;
+            const content = document.querySelector('.content');
+            const h2Elements = document.querySelectorAll('h2');
+
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                content.classList.remove('light-mode');
+                content.classList.add('dark-mode');
+                h2Elements.forEach(h2 => h2.classList.add('dark-mode'));
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                content.classList.remove('dark-mode');
+                content.classList.add('light-mode');
+                h2Elements.forEach(h2 => h2.classList.remove('dark-mode'));
+            }
+        }
+    </script>
+</body>
+</html>

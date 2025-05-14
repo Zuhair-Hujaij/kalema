@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Vocabulaire Français - Comprendre de nouvelles cultures</title>
+  <link rel="shortcut icon" type="x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body { 
+      font-family: sans-serif; 
+      margin: 0; 
+      background: #e6f9fa; 
+      transition: background-color 0.3s, color 0.3s; 
+    }
+    header { 
+      background-color: #007BFF; 
+      color: white; 
+      text-align: center; 
+      padding: 20px; 
+      font-size: 24px; 
+      font-weight: bold; 
+    }
+    nav { 
+      background-color: #007BFF; 
+      padding: 10px; 
+      display: flex; 
+      justify-content: center; 
+      gap: 20px; 
+    }
+    nav a { 
+      color: white; 
+      font-weight: bold; 
+      text-decoration: none; 
+    }
+    nav button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    nav button:hover {
+      background: #0056b3;
+    }
+    .container { 
+      padding: 30px; 
+      text-align: center; 
+    }
+    h2 { 
+      color: #007BFF; 
+    }
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+      gap: 20px; 
+      max-width: 900px; 
+      margin: auto; 
+    }
+    .card { 
+      background-color: #b3d7ff; 
+      padding: 20px; 
+      border-radius: 10px; 
+      color: #007BFF; 
+      font-weight: bold; 
+      cursor: pointer; 
+    }
+    .card p { 
+      margin: 5px 0 0; 
+      font-weight: normal; 
+    }
+
+    body.night-mode {
+      background-color: #333;
+      color: #fff;
+    }
+    header.night-mode {
+      background-color: #444;
+    }
+    .card.night-mode {
+      background-color: #666;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Vocabulaire Français - Comprendre de nouvelles cultures
+  </header>
+
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="french-goal.html">السابق</a>
+    <button onclick="toggleNightMode()">🌙 الوضع الليلي / النهاري</button>
+  </nav>
+
+  <div class="container">
+    <h2>Comprendre de nouvelles cultures</h2>
+    <div class="grid">
+      <div class="card" onclick="speakText('Culture')">Culture <p>ثقافة</p></div>
+      <div class="card" onclick="speakText('Tradition')">Tradition <p>تقليد</p></div>
+      <div class="card" onclick="speakText('Religion')">Religion <p>دين</p></div>
+      <div class="card" onclick="speakText('Coutume')">Coutume <p>عادة</p></div>
+      <div class="card" onclick="speakText('Histoire')">Histoire <p>تاريخ</p></div>
+      <div class="card" onclick="speakText('Art')">Art <p>فن</p></div>
+      <div class="card" onclick="speakText('Musique')">Musique <p>موسيقى</p></div>
+      <div class="card" onclick="speakText('Danse')">Danse <p>رقص</p></div>
+      <div class="card" onclick="speakText('Langue')">Langue <p>لغة</p></div>
+      <div class="card" onclick="speakText('Habitude')">Habitude <p>سلوك</p></div>
+      <div class="card" onclick="speakText('Fête')">Fête <p>عيد</p></div>
+      <div class="card" onclick="speakText('Cérémonie')">Cérémonie <p>مراسم</p></div>
+      <div class="card" onclick="speakText('Costume')">Costume <p>زي تقليدي</p></div>
+      <div class="card" onclick="speakText('Valeur')">Valeur <p>قيمة</p></div>
+      <div class="card" onclick="speakText('Cuisine')">Cuisine <p>مطبخ</p></div>
+      <div class="card" onclick="speakText('Échange culturel')">Échange culturel <p>تبادل ثقافي</p></div>
+      <div class="card" onclick="speakText('Dialogue')">Dialogue <p>حوار</p></div>
+      <div class="card" onclick="speakText('Respect')">Respect <p>احترام</p></div>
+      <div class="card" onclick="speakText('Diversité')">Diversité <p>تنوع</p></div>
+      <div class="card" onclick="speakText('Compréhension')">Compréhension <p>فهم</p></div>
+      <div class="card" onclick="speakText('Préjugé')">Préjugé <p>تحامل</p></div>
+      <div class="card" onclick="speakText('Inclusion')">Inclusion <p>اندماج</p></div>
+      <div class="card" onclick="speakText('Minorité')">Minorité <p>أقلية</p></div>
+      <div class="card" onclick="speakText('Majorité')">Majorité <p>أغلبية</p></div>
+      <div class="card" onclick="speakText('Monde')">Monde <p>عالم</p></div>
+      <div class="card" onclick="speakText('Paix')">Paix <p>سلام</p></div>
+      <div class="card" onclick="speakText('Conflit')">Conflit <p>صراع</p></div>
+      <div class="card" onclick="speakText('Éducation')">Éducation <p>تعليم</p></div>
+      <div class="card" onclick="speakText('Tourisme')">Tourisme <p>سياحة</p></div>
+      <div class="card" onclick="speakText('Identité')">Identité <p>هوية</p></div>
+      <div class="card" onclick="speakText('Symbole')">Symbole <p>رمز</p></div>
+      <div class="card" onclick="speakText('Langage corporel')">Langage corporel <p>لغة الجسد</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleNightMode() {
+      document.body.classList.toggle('night-mode');
+      document.querySelector('header').classList.toggle('night-mode');
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => card.classList.toggle('night-mode'));
+    }
+
+    function speakText(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'fr-FR';
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+
+</body>
+</html>

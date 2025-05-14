@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Communication with Friends from Other Countries - التواصل مع أصدقاء من دول أخرى</title>
+  <link rel="shortcut icon" type="x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+    h2 {
+      color: #007BFF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background-color: #b3d7ff;
+      padding: 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+    body.dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+    body.dark-mode header {
+      background-color: #1f3d72;
+    }
+    body.dark-mode .card {
+      background-color: #444;
+      color: #fff;
+    }
+    body.dark-mode .card p {
+      color: #ccc;
+    }
+    .toggle-btn {
+      background-color: #fff;
+      color: #007BFF;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span>Communication with Friends from Other Countries - التواصل مع أصدقاء من دول أخرى</span>
+    <button class="toggle-btn" id="toggleMode">🌙 Night Mode</button>
+  </header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="english-goal.html">السابق</a>
+  </nav>
+
+  <div class="container">
+    <h2>Communication with Friends from Other Countries Vocabulary (English)</h2>
+    <div class="grid">
+      <div class="card" onclick="speakWord('Friendship')">Friendship<br><p>صداقة</p></div>
+      <div class="card" onclick="speakWord('Social Media')">Social Media<br><p>وسائل التواصل الاجتماعي</p></div>
+      <div class="card" onclick="speakWord('Message')">Message<br><p>رسالة</p></div>
+      <div class="card" onclick="speakWord('Chat')">Chat<br><p>دردشة</p></div>
+      <div class="card" onclick="speakWord('Call')">Call<br><p>مكالمة</p></div>
+      <div class="card" onclick="speakWord('Video Call')">Video Call<br><p>مكالمة فيديو</p></div>
+      <div class="card" onclick="speakWord('Meetup')">Meetup<br><p>لقاء</p></div>
+      <div class="card" onclick="speakWord('Language Exchange')">Language Exchange<br><p>تبادل لغوي</p></div>
+      <div class="card" onclick="speakWord('Conversation')">Conversation<br><p>محادثة</p></div>
+      <div class="card" onclick="speakWord('Understanding')">Understanding<br><p>فهم</p></div>
+      <div class="card" onclick="speakWord('Cultural Differences')">Cultural Differences<br><p>اختلافات ثقافية</p></div>
+      <div class="card" onclick="speakWord('Respect')">Respect<br><p>احترام</p></div>
+      <div class="card" onclick="speakWord('Sharing Ideas')">Sharing Ideas<br><p>مشاركة الأفكار</p></div>
+      <div class="card" onclick="speakWord('Connection')">Connection<br><p>اتصال</p></div>
+      <div class="card" onclick="speakWord('Help')">Help<br><p>مساعدة</p></div>
+      <div class="card" onclick="speakWord('Advice')">Advice<br><p>نصيحة</p></div>
+      <div class="card" onclick="speakWord('Discussion')">Discussion<br><p>مناقشة</p></div>
+      <div class="card" onclick="speakWord('Support')">Support<br><p>دعم</p></div>
+      <div class="card" onclick="speakWord('Collaborate')">Collaborate<br><p>تعاون</p></div>
+      <div class="card" onclick="speakWord('Interaction')">Interaction<br><p>تفاعل</p></div>
+      <div class="card" onclick="speakWord('Feelings')">Feelings<br><p>مشاعر</p></div>
+      <div class="card" onclick="speakWord('Emotions')">Emotions<br><p>عواطف</p></div>
+      <div class="card" onclick="speakWord('Agreement')">Agreement<br><p>اتفاق</p></div>
+      <div class="card" onclick="speakWord('Disagreement')">Disagreement<br><p>اختلاف</p></div>
+      <div class="card" onclick="speakWord('Compromise')">Compromise<br><p>حل وسط</p></div>
+      <div class="card" onclick="speakWord('Sharing')">Sharing<br><p>مشاركة</p></div>
+      <div class="card" onclick="speakWord('Trust')">Trust<br><p>ثقة</p></div>
+      <div class="card" onclick="speakWord('Kindness')">Kindness<br><p>لطف</p></div>
+      <div class="card" onclick="speakWord('Love')">Love<br><p>حب</p></div>
+      <div class="card" onclick="speakWord('Respect for Others')">Respect for Others<br><p>احترام الآخرين</p></div>
+    </div>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("toggleMode");
+    const body = document.body;
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      if (body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "🌞 Day Mode";
+      } else {
+        toggleBtn.textContent = "🌙 Night Mode";
+      }
+    });
+
+    function speakWord(word) {
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = "en-US"; 
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>

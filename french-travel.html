@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Vocabulaire Français - Voyage et découverte du monde</title>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body { font-family: sans-serif; margin: 0; background: #e6f9fa; color: #000; transition: background-color 0.3s, color 0.3s; }
+    header { background-color: #007BFF; color: white; text-align: center; padding: 20px; font-size: 24px; font-weight: bold; }
+    nav { background-color: #007BFF; padding: 10px; display: flex; justify-content: center; gap: 20px; }
+    nav a { color: white; font-weight: bold; text-decoration: none; }
+    nav button { background-color: #007BFF; color: white; padding: 10px 15px; border: none; cursor: pointer; }
+    nav button:hover { background-color: #0056b3; }
+    .container { padding: 30px; text-align: center; }
+    h2 { color: #007BFF; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 900px; margin: auto; }
+    .card { background-color: #b3d7ff; padding: 20px; border-radius: 10px; color: #007BFF; font-weight: bold; cursor: pointer; }
+    .card p { margin: 5px 0 0; font-weight: normal; }
+
+    body.dark-mode { background-color: #121212; color: #e6e6e6; }
+    header.dark-mode { background-color: #333; color: white; }
+    nav.dark-mode { background-color: #333; }
+    nav.dark-mode a { color: #e6e6e6; }
+    nav.dark-mode button { background-color: #333; color: white; }
+    nav.dark-mode button:hover { background-color: #555; }
+    .container.dark-mode { color: #e6e6e6; }
+    h2.dark-mode { color: #4CAF50; }
+    .card.dark-mode { background-color: #444; color: #e6e6e6; }
+  </style>
+</head>
+<body>
+  <header>Vocabulaire Français - Voyage et découverte du monde</header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="french-goal.html">السابق</a>
+    <button onclick="toggleDarkMode()">وضع الليل/النهار</button>
+  </nav>
+  <div class="container">
+    <h2>Voyage et découverte du monde</h2>
+    <div class="grid">
+      <div class="card" onclick="speakWord('Voyage')">Voyage <p>سفر</p></div>
+      <div class="card" onclick="speakWord('Aéroport')">Aéroport <p>مطار</p></div>
+      <div class="card" onclick="speakWord('Passeport')">Passeport <p>جواز سفر</p></div>
+      <div class="card" onclick="speakWord('Billet')">Billet <p>تذكرة</p></div>
+      <div class="card" onclick="speakWord('Valise')">Valise <p>حقيبة سفر</p></div>
+      <div class="card" onclick="speakWord('Avion')">Avion <p>طائرة</p></div>
+      <div class="card" onclick="speakWord('Train')">Train <p>قطار</p></div>
+      <div class="card" onclick="speakWord('Hôtel')">Hôtel <p>فندق</p></div>
+      <div class="card" onclick="speakWord('Carte')">Carte <p>خريطة</p></div>
+      <div class="card" onclick="speakWord('Guide')">Guide <p>دليل</p></div>
+      <div class="card" onclick="speakWord('Visa')">Visa <p>تأشيرة</p></div>
+      <div class="card" onclick="speakWord('Tourisme')">Tourisme <p>سياحة</p></div>
+      <div class="card" onclick="speakWord('Excursion')">Excursion <p>رحلة</p></div>
+      <div class="card" onclick="speakWord('Bagage')">Bagage <p>أمتعة</p></div>
+      <div class="card" onclick="speakWord('Réservation')">Réservation <p>حجز</p></div>
+      <div class="card" onclick="speakWord('Destination')">Destination <p>وجهة</p></div>
+      <div class="card" onclick="speakWord('Découverte')">Découverte <p>اكتشاف</p></div>
+      <div class="card" onclick="speakWord('Culture')">Culture <p>ثقافة</p></div>
+      <div class="card" onclick="speakWord('Tradition')">Tradition <p>تقليد</p></div>
+      <div class="card" onclick="speakWord('Itinéraire')">Itinéraire <p>مسار الرحلة</p></div>
+      <div class="card" onclick="speakWord('Monument')">Monument <p>معلم</p></div>
+      <div class="card" onclick="speakWord('Plage')">Plage <p>شاطئ</p></div>
+      <div class="card" onclick="speakWord('Montagne')">Montagne <p>جبل</p></div>
+      <div class="card" onclick="speakWord('Ville')">Ville <p>مدينة</p></div>
+      <div class="card" onclick="speakWord('Campagne')">Campagne <p>ريف</p></div>
+      <div class="card" onclick="speakWord('Safari')">Safari <p>سفاري</p></div>
+      <div class="card" onclick="speakWord('Croisière')">Croisière <p>رحلة بحرية</p></div>
+      <div class="card" onclick="speakWord('Frontière')">Frontière <p>حدود</p></div>
+      <div class="card" onclick="speakWord('Langue')">Langue <p>لغة</p></div>
+      <div class="card" onclick="speakWord('Souvenir')">Souvenir <p>تذكار</p></div>
+      <div class="card" onclick="speakWord('Photographie')">Photographie <p>صورة</p></div>
+      <div class="card" onclick="speakWord('Aventure')">Aventure <p>مغامرة</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      document.querySelector('header').classList.toggle('dark-mode');
+      document.querySelector('nav').classList.toggle('dark-mode');
+      document.querySelector('.container').classList.toggle('dark-mode');
+      document.querySelectorAll('.card').forEach(card => card.classList.toggle('dark-mode'));
+      document.querySelectorAll('h2').forEach(h => h.classList.toggle('dark-mode'));
+    }
+
+    function speakWord(word) {
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = 'fr-FR';  
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>

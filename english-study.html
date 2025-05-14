@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Study Abroad - الدراسة بالخارج</title>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    nav button:hover {
+      background: #0056b3;
+    }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+    h2 {
+      color: #007BFF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background-color: #b3d7ff;
+      padding: 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+
+    /* Night mode styles */
+    body.night-mode {
+      background-color: #333;
+      color: #fff;
+    }
+    header.night-mode {
+      background-color: #444;
+    }
+    .container.night-mode {
+      background-color: #555;
+      color: #fff;
+    }
+    .card.night-mode {
+      background-color: #666;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Study Abroad - الدراسة بالخارج
+  </header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="english-goal.html">السابق</a>
+    <button onclick="toggleNightMode()">🌙 الوضع الليلي / النهاري</button>
+  </nav>
+
+  <div class="container">
+    <h2>Study Abroad Vocabulary (English)</h2>
+    <div class="grid">
+      <div class="card" onclick="speakWord('Scholarship')">Scholarship<br><p>منحة دراسية</p></div>
+      <div class="card" onclick="speakWord('University')">University<br><p>جامعة</p></div>
+      <div class="card" onclick="speakWord('Visa')">Visa<br><p>تأشيرة</p></div>
+      <div class="card" onclick="speakWord('Campus')">Campus<br><p>حرم الجامعة</p></div>
+      <div class="card" onclick="speakWord('Accommodation')">Accommodation<br><p>إقامة</p></div>
+      <div class="card" onclick="speakWord('Culture Shock')">Culture Shock<br><p>صدمة ثقافية</p></div>
+      <div class="card" onclick="speakWord('International Student')">International Student<br><p>طالب دولي</p></div>
+      <div class="card" onclick="speakWord('Language Barrier')">Language Barrier<br><p>حاجز اللغة</p></div>
+      <div class="card" onclick="speakWord('Tuition Fee')">Tuition Fee<br><p>رسوم دراسية</p></div>
+      <div class="card" onclick="speakWord('Exchange Program')">Exchange Program<br><p>برنامج التبادل</p></div>
+      <div class="card" onclick="speakWord('Language Course')">Language Course<br><p>دورة لغة</p></div>
+      <div class="card" onclick="speakWord('Immigration')">Immigration<br><p>هجرة</p></div>
+      <div class="card" onclick="speakWord('Application')">Application<br><p>طلب</p></div>
+      <div class="card" onclick="speakWord('Orientation')">Orientation<br><p>توجيه</p></div>
+      <div class="card" onclick="speakWord('Internship')">Internship<br><p>تدريب</p></div>
+      <div class="card" onclick="speakWord('Degree')">Degree<br><p>درجة علمية</p></div>
+      <div class="card" onclick="speakWord('Cultural Exchange')">Cultural Exchange<br><p>تبادل ثقافي</p></div>
+      <div class="card" onclick="speakWord('Global Experience')">Global Experience<br><p>تجربة عالمية</p></div>
+      <div class="card" onclick="speakWord('Study Program')">Study Program<br><p>برنامج دراسي</p></div>
+      <div class="card" onclick="speakWord('Immigration Policy')">Immigration Policy<br><p>سياسة الهجرة</p></div>
+      <div class="card" onclick="speakWord('Language Skills')">Language Skills<br><p>مهارات اللغة</p></div>
+      <div class="card" onclick="speakWord('Host Family')">Host Family<br><p>عائلة مضيفة</p></div>
+      <div class="card" onclick="speakWord('Study Materials')">Study Materials<br><p>مواد دراسية</p></div>
+      <div class="card" onclick="speakWord('Accommodation')">Accommodation<br><p>إقامة</p></div>
+      <div class="card" onclick="speakWord('Language Exchange')">Language Exchange<br><p>تبادل لغوي</p></div>
+      <div class="card" onclick="speakWord('Student Loan')">Student Loan<br><p>قرض دراسي</p></div>
+      <div class="card" onclick="speakWord('Cultural Integration')">Cultural Integration<br><p>الاندماج الثقافي</p></div>
+      <div class="card" onclick="speakWord('Financial Aid')">Financial Aid<br><p>مساعدة مالية</p></div>
+      <div class="card" onclick="speakWord('Study Abroad Program')">Study Abroad Program<br><p>برنامج الدراسة بالخارج</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleNightMode() {
+      document.body.classList.toggle('night-mode');
+      document.querySelector('header').classList.toggle('night-mode');
+      document.querySelector('.container').classList.toggle('night-mode');
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => card.classList.toggle('night-mode'));
+    }
+
+    function speakWord(word) {
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = 'en-US'; // تحديد اللغة الإنجليزية
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>

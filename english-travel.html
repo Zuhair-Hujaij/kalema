@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel and Explore the World - السفر واستكشاف العالم</title>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    nav button:hover {
+      background: #0056b3;
+    }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+    h2 {
+      color: #007BFF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background-color: #b3d7ff;
+      padding: 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+
+    body.night-mode {
+      background-color: #333;
+      color: #fff;
+    }
+    header.night-mode {
+      background-color: #444;
+    }
+    .container.night-mode {
+      background-color: #555;
+      color: #fff;
+    }
+    .card.night-mode {
+      background-color: #666;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Travel and Explore the World - السفر واستكشاف العالم
+  </header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="english-goal.html">السابق</a>
+    <button onclick="toggleNightMode()">🌙 الوضع الليلي / النهاري</button>
+  </nav>
+
+  <div class="container">
+    <h2>Travel and Explore the World Vocabulary (English)</h2>
+    <div class="grid">
+      <div class="card" onclick="speakWord('Travel')">Travel<br><p>سفر</p></div>
+      <div class="card" onclick="speakWord('Destination')">Destination<br><p>وجهة</p></div>
+      <div class="card" onclick="speakWord('Flight')">Flight<br><p>رحلة</p></div>
+      <div class="card" onclick="speakWord('Adventure')">Adventure<br><p>مغامرة</p></div>
+      <div class="card" onclick="speakWord('Explore')">Explore<br><p>استكشاف</p></div>
+      <div class="card" onclick="speakWord('Journey')">Journey<br><p>رحلة</p></div>
+      <div class="card" onclick="speakWord('Ticket')">Ticket<br><p>تذكرة</p></div>
+      <div class="card" onclick="speakWord('Airport')">Airport<br><p>مطار</p></div>
+      <div class="card" onclick="speakWord('Travel Guide')">Travel Guide<br><p>دليل السفر</p></div>
+      <div class="card" onclick="speakWord('Vacation')">Vacation<br><p>إجازة</p></div>
+      <div class="card" onclick="speakWord('Beach')">Beach<br><p>شاطئ</p></div>
+      <div class="card" onclick="speakWord('Mountain')">Mountain<br><p>جبل</p></div>
+      <div class="card" onclick="speakWord('Country')">Country<br><p>دولة</p></div>
+      <div class="card" onclick="speakWord('Passport')">Passport<br><p>جواز السفر</p></div>
+      <div class="card" onclick="speakWord('Adventure')">Adventure<br><p>مغامرة</p></div>
+      <div class="card" onclick="speakWord('Scenic View')">Scenic View<br><p>منظر خلاب</p></div>
+      <div class="card" onclick="speakWord('Hotel')">Hotel<br><p>فندق</p></div>
+      <div class="card" onclick="speakWord('Backpacker')">Backpacker<br><p>رحالة</p></div>
+      <div class="card" onclick="speakWord('Guidebook')">Guidebook<br><p>دليل السفر</p></div>
+      <div class="card" onclick="speakWord('Culture')">Culture<br><p>ثقافة</p></div>
+      <div class="card" onclick="speakWord('Language')">Language<br><p>لغة</p></div>
+      <div class="card" onclick="speakWord('Tourist')">Tourist<br><p>سائح</p></div>
+      <div class="card" onclick="speakWord('Adventure')">Adventure<br><p>مغامرة</p></div>
+      <div class="card" onclick="speakWord('Museum')">Museum<br><p>متحف</p></div>
+      <div class="card" onclick="speakWord('Photography')">Photography<br><p>تصوير</p></div>
+      <div class="card" onclick="speakWord('Tour')">Tour<br><p>جولة</p></div>
+      <div class="card" onclick="speakWord('Nature')">Nature<br><p>طبيعة</p></div>
+      <div class="card" onclick="speakWord('Hiking')">Hiking<br><p>تسلق الجبال</p></div>
+      <div class="card" onclick="speakWord('Souvenir')">Souvenir<br><p>تذكار</p></div>
+      <div class="card" onclick="speakWord('Expedition')">Expedition<br><p>بعثة استكشافية</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleNightMode() {
+      document.body.classList.toggle('night-mode');
+      document.querySelector('header').classList.toggle('night-mode');
+      document.querySelector('.container').classList.toggle('night-mode');
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => card.classList.toggle('night-mode'));
+    }
+
+    function speakWord(word) {
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = 'en-US'; 
+      window.speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>

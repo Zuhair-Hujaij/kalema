@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Vocabulaire Français - Communiquer avec des amis étrangers</title>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+    h2 {
+      color: #007BFF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .card {
+      background-color: #b3d7ff;
+      padding: 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+   
+    body.night-mode {
+      background-color: #333;
+      color: #fff;
+    }
+    header.night-mode {
+      background-color: #444;
+    }
+    .container.night-mode {
+      background-color: #555;
+    }
+    .card.night-mode {
+      background-color: #666;
+      color: #fff;
+    }
+
+    nav button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Vocabulaire Français - Communiquer avec des amis étrangers
+</header>
+
+<nav>
+  <a href="index.html">الرئيسية</a>
+  <a href="french-goal.html">السابق</a>
+  <button onclick="toggleNightMode()">🌙 الوضع الليلي / النهاري</button>
+</nav>
+
+<div class="container">
+  <h2>Communiquer avec des amis étrangers</h2>
+  <div class="grid">
+    <div class="card" onclick="speakWord('Ami')">Ami <p>صديق</p></div>
+    <div class="card" onclick="speakWord('Conversation')">Conversation <p>محادثة</p></div>
+    <div class="card" onclick="speakWord('Message')">Message <p>رسالة</p></div>
+    <div class="card" onclick="speakWord('Lettre')">Lettre <p>رسالة ورقية</p></div>
+    <div class="card" onclick="speakWord('Réseau social')">Réseau social <p>شبكة اجتماعية</p></div>
+    <div class="card" onclick="speakWord('Appel vidéo')">Appel vidéo <p>مكالمة فيديو</p></div>
+    <div class="card" onclick="speakWord('Discussion')">Discussion <p>نقاش</p></div>
+    <div class="card" onclick="speakWord('Communication')">Communication <p>تواصل</p></div>
+    <div class="card" onclick="speakWord('Langue étrangère')">Langue étrangère <p>لغة أجنبية</p></div>
+    <div class="card" onclick="speakWord('Traduction')">Traduction <p>ترجمة</p></div>
+    <div class="card" onclick="speakWord('Salut')">Salut <p>تحية</p></div>
+    <div class="card" onclick="speakWord('Amitié')">Amitié <p>صداقة</p></div>
+    <div class="card" onclick="speakWord('Lien')">Lien <p>رابط</p></div>
+    <div class="card" onclick="speakWord('Cordial')">Cordial <p>ودي</p></div>
+    <div class="card" onclick="speakWord('Politesse')">Politesse <p>أدب</p></div>
+    <div class="card" onclick="speakWord('Langage')">Langage <p>لغة</p></div>
+    <div class="card" onclick="speakWord('Emoji')">Emoji <p>رمز تعبيري</p></div>
+    <div class="card" onclick="speakWord('Compréhension')">Compréhension <p>فهم</p></div>
+    <div class="card" onclick="speakWord('Respect')">Respect <p>احترام</p></div>
+    <div class="card" onclick="speakWord('Invitation')">Invitation <p>دعوة</p></div>
+    <div class="card" onclick="speakWord('Rencontre')">Rencontre <p>لقاء</p></div>
+    <div class="card" onclick="speakWord('Partage')">Partage <p>مشاركة</p></div>
+    <div class="card" onclick="speakWord('Culture')">Culture <p>ثقافة</p></div>
+    <div class="card" onclick="speakWord('Temps')">Temps <p>وقت</p></div>
+    <div class="card" onclick="speakWord('Différence')">Différence <p>اختلاف</p></div>
+    <div class="card" onclick="speakWord('Connexion')">Connexion <p>اتصال</p></div>
+    <div class="card" onclick="speakWord('Commun')">Commun <p>مشترك</p></div>
+    <div class="card" onclick="speakWord('Sympathie')">Sympathie <p>مودة</p></div>
+    <div class="card" onclick="speakWord('Contact')">Contact <p>اتصال</p></div>
+    <div class="card" onclick="speakWord('Lien social')">Lien social <p>صلة اجتماعية</p></div>
+    <div class="card" onclick="speakWord('Temps réel')">Temps réel <p>زمن حقيقي</p></div>
+    <div class="card" onclick="speakWord('Échange')">Échange <p>تبادل</p></div>
+  </div>
+</div>
+
+<script>
+  function toggleNightMode() {
+    document.body.classList.toggle('night-mode');
+    document.querySelector('header').classList.toggle('night-mode');
+    document.querySelector('.container').classList.toggle('night-mode');
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => card.classList.toggle('night-mode'));
+  }
+
+  function speakWord(word) {
+    const speech = new SpeechSynthesisUtterance(word);
+    speech.lang = 'fr-FR'; 
+    window.speechSynthesis.speak(speech);
+  }
+</script>
+
+</body>
+</html>

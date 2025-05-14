@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Understanding New Cultures - فهم ثقافات جديدة</title>
+  <link rel="shortcut icon" type="x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    :root {
+      --bg-color: #e6f9fa;
+      --text-color: #000;
+      --header-color: #007BFF;
+      --card-bg: #b3d7ff;
+      --card-text: #007BFF;
+    }
+
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #fff;
+      --header-color: #222;
+      --card-bg: #333;
+      --card-text: #fff;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: var(--header-color);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: var(--header-color);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    #toggle-theme {
+      background-color: white;
+      color: var(--header-color);
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--header-color);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 10px;
+      color: var(--card-text);
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Understanding New Cultures - فهم ثقافات جديدة
+  </header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="english-goal.html">السابق</a>
+    <button id="toggle-theme">🌙 الوضع الليلي</button>
+  </nav>
+
+  <div class="container">
+    <h2>Understanding New Cultures Vocabulary (English)</h2>
+    <div class="grid">
+      <div class="card" onclick="speak('Tradition')">Tradition<br><p>تقليد</p></div>
+      <div class="card" onclick="speak('Custom')">Custom<br><p>عادة</p></div>
+      <div class="card" onclick="speak('Heritage')">Heritage<br><p>تراث</p></div>
+      <div class="card" onclick="speak('Celebration')">Celebration<br><p>احتفال</p></div>
+      <div class="card" onclick="speak('Festival')">Festival<br><p>مهرجان</p></div>
+      <div class="card" onclick="speak('Language')">Language<br><p>لغة</p></div>
+      <div class="card" onclick="speak('Cuisine')">Cuisine<br><p>مطبخ</p></div>
+      <div class="card" onclick="speak('Art')">Art<br><p>فن</p></div>
+      <div class="card" onclick="speak('Music')">Music<br><p>موسيقى</p></div>
+      <div class="card" onclick="speak('Dance')">Dance<br><p>رقص</p></div>
+      <div class="card" onclick="speak('Ritual')">Ritual<br><p>طقوس</p></div>
+      <div class="card" onclick="speak('Costume')">Costume<br><p>زي</p></div>
+      <div class="card" onclick="speak('Etiquette')">Etiquette<br><p>إتيكيت</p></div>
+      <div class="card" onclick="speak('Social Norms')">Social Norms<br><p>القواعد الاجتماعية</p></div>
+      <div class="card" onclick="speak('Belief')">Belief<br><p>معتقد</p></div>
+      <div class="card" onclick="speak('Myth')">Myth<br><p>أسطورة</p></div>
+      <div class="card" onclick="speak('Legend')">Legend<br><p>أسطورة</p></div>
+      <div class="card" onclick="speak('Identity')">Identity<br><p>هوية</p></div>
+      <div class="card" onclick="speak('Diversity')">Diversity<br><p>تنوع</p></div>
+      <div class="card" onclick="speak('Tolerance')">Tolerance<br><p>تسامح</p></div>
+      <div class="card" onclick="speak('Value')">Value<br><p>قيمة</p></div>
+      <div class="card" onclick="speak('Respect')">Respect<br><p>احترام</p></div>
+      <div class="card" onclick="speak('Community')">Community<br><p>مجتمع</p></div>
+      <div class="card" onclick="speak('Understanding')">Understanding<br><p>فهم</p></div>
+      <div class="card" onclick="speak('Acceptance')">Acceptance<br><p>قبول</p></div>
+      <div class="card" onclick="speak('Hospitality')">Hospitality<br><p>ضيافة</p></div>
+      <div class="card" onclick="speak('Courtesy')">Courtesy<br><p>أدب</p></div>
+      <div class="card" onclick="speak('Tolerance')">Tolerance<br><p>تحمل</p></div>
+      <div class="card" onclick="speak('Respect for elders')">Respect for elders<br><p>احترام كبار السن</p></div>
+      <div class="card" onclick="speak('Intercultural')">Intercultural<br><p>بين الثقافات</p></div>
+    </div>
+  </div>
+
+  <script>
+    const toggleButton = document.getElementById("toggle-theme");
+    toggleButton.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      if (document.body.classList.contains("dark-mode")) {
+        toggleButton.textContent = "☀️ الوضع النهاري";
+      } else {
+        toggleButton.textContent = "🌙 الوضع الليلي";
+      }
+    });
+
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US'; 
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>

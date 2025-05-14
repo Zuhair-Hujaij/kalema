@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منصة كلمة</title>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e6f2ff;
+      color: #000;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 26px;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #007BFF;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+    }
+    nav a:hover {
+      background-color: #0056b3;
+      border-radius: 5px;
+    }
+    .container {
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      color: #007BFF;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      background-color: #cce5ff;
+      padding: 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .card p {
+      display: none;
+      margin-top: 10px;
+      font-weight: normal;
+    }
+
+    .night-mode {
+      background-color: #121212;
+      color: #fff;
+    }
+    .night-mode .card {
+      background-color: #333;
+      color: #fff;
+    }
+    .night-mode .card p {
+      color: #ccc;
+    }
+    .night-mode header, .night-mode nav {
+      background-color: #222;
+    }
+    .night-mode h2 {
+      color: #ffcc00;
+    }
+
+    .mode-button {
+      background-color: #444;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .mode-button:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>موقع تعليم اللغات - أسئلة تعليمية</header>
+  <nav>
+    <a href="index.html">الرئسية</a>
+    <button class="mode-button" onclick="toggleNightMode()">🌙 / ☀️</button>
+  </nav>
+
+  <div class="container">
+
+    <h2 id="english">اللغة الإنجليزية</h2>
+    <div class="grid">
+      <div class="card" onclick="toggleAnswer(this)">What is the plural of "child"?<p>Children</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Translate: "كتاب"<p>Book</p></div>
+      <div class="card" onclick="toggleAnswer(this)">What is the past tense of "go"?<p>Went</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Translate: "قلم"<p>Pen</p></div>
+      <div class="card" onclick="toggleAnswer(this)">What's the opposite of "cold"?<p>Hot</p></div>
+      <div class="card" onclick="toggleAnswer(this)">How do you say "سيارة" in English?<p>Car</p></div>
+      <div class="card" onclick="toggleAnswer(this)">What's the verb in: "She runs fast"?<p>Runs</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Translate: "تفاحة"<p>Apple</p></div>
+      <div class="card" onclick="toggleAnswer(this)">What is "happy" in Arabic?<p>سعيد</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Complete: I ____ to school.<p>go</p></div>
+    </div>
+
+    <h2 id="french">اللغة الفرنسية</h2>
+    <div class="grid">
+      <div class="card" onclick="toggleAnswer(this)">Comment dit-on "مدرسة" en français ?<p>École</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Quel est le contraire de "grand"?<p>Petit</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Traduire: "كتاب"<p>Livre</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Quel est le féminin de "acteur"?<p>Actrice</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Traduire: "كلب"<p>Chien</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Quelle est la couleur du ciel ?<p>Bleu</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Quelle est la capitale de la France ?<p>Paris</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Traduire: "سيارة"<p>Voiture</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Que signifie "bonjour"?<p>صباح الخير</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Complétez: Je ____ un livre.<p>lis</p></div>
+    </div>
+
+    <h2 id="chinese">اللغة الصينية</h2>
+    <div class="grid">
+      <div class="card" onclick="toggleAnswer(this)">ما معنى "你好"؟<p>مرحبًا</p></div>
+      <div class="card" onclick="toggleAnswer(this)">ترجم "مدرسة" إلى الصينية<p>学校 (xuéxiào)</p></div>
+      <div class="card" onclick="toggleAnswer(this)">كيف تكتب "ماء" بالصينية؟<p>水 (shuǐ)</p></div>
+      <div class="card" onclick="toggleAnswer(this)">ما معنى "谢谢"؟<p>شكرًا</p></div>
+      <div class="card" onclick="toggleAnswer(this)">ما هو "كتاب" بالصينية؟<p>书 (shū)</p></div>
+      <div class="card" onclick="toggleAnswer(this)">ما هو رقم 5 بالصينية؟<p>五 (wǔ)</p></div>
+      <div class="card" onclick="toggleAnswer(this)">كيف تقول "أنا"؟<p>我 (wǒ)</p></div>
+      <div class="card" onclick="toggleAnswer(this)">ما معنى "再见"؟<p>إلى اللقاء</p></div>
+      <div class="card" onclick="toggleAnswer(this)">ما هو "قلم" بالصينية؟<p>笔 (bǐ)</p></div>
+      <div class="card" onclick="toggleAnswer(this)">كيف تكتب "طعام"؟<p>食物 (shíwù)</p></div>
+    </div>
+
+    <h2 id="spanish">اللغة الإسبانية</h2>
+    <div class="grid">
+      <div class="card" onclick="toggleAnswer(this)">¿Cómo se dice "كتاب" en español?<p>Libro</p></div>
+      <div class="card" onclick="toggleAnswer(this)">¿Qué significa "hola"?<p>مرحبًا</p></div>
+      <div class="card" onclick="toggleAnswer(this)">¿Cuál es el plural de "niño"?<p>Niños</p></div>
+      <div class="card" onclick="toggleAnswer(this)">¿Cómo se dice "سيارة"?<p>Coche</p></div>
+      <div class="card" onclick="toggleAnswer(this)">¿Qué es "rojo"?<p>أحمر</p></div>
+      <div class="card" onclick="toggleAnswer(this)">¿Cómo se dice "معلم"؟<p>Maestro</p></div>
+      <div class="card" onclick="toggleAnswer(this)">¿Qué es "comer"?<p>يأكل</p></div>
+      <div class="card" onclick="toggleAnswer(this)">¿Qué es "gato"?<p>قط</p></div>
+      <div class="card" onclick="toggleAnswer(this)">¿Cómo se dice "ماء"؟<p>Agua</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Completa: Yo ____ español.<p>hablo</p></div>
+    </div>
+
+    <h2 id="turkish">اللغة التركية</h2>
+    <div class="grid">
+      <div class="card" onclick="toggleAnswer(this)">"Merhaba" ne demek?<p>مرحبًا</p></div>
+      <div class="card" onclick="toggleAnswer(this)">"Kitap" ne demek?<p>كتاب</p></div>
+      <div class="card" onclick="toggleAnswer(this)">"Okul" nedir?<p>مدرسة</p></div>
+      <div class="card" onclick="toggleAnswer(this)">"Su" ne anlama gelir?<p>ماء</p></div>
+      <div class="card" onclick="toggleAnswer(this)">"Araba" ne demek?<p>سيارة</p></div>
+      <div class="card" onclick="toggleAnswer(this)">"Kalem" nedir?<p>قلم</p></div>
+      <div class="card" onclick="toggleAnswer(this)">"Ben" ne demek?<p>أنا</p></div>
+      <div class="card" onclick="toggleAnswer(this)">"Teşekkürler" anlamı nedir?<p>شكرًا</p></div>
+      <div class="card" onclick="toggleAnswer(this)">"Ev" nedir?<p>بيت</p></div>
+      <div class="card" onclick="toggleAnswer(this)">"Yemek" ne demek?<p>طعام</p></div>
+    </div>
+
+    <h2 id="russian">اللغة الروسية</h2>
+    <div class="grid">
+      <div class="card" onclick="toggleAnswer(this)">Что значит "привет"?<p>مرحبًا</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Как сказать "كتاب" по-русски?<p>Книга</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Что такое "школа"?<p>مدرسة</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Переведи: "قلم"<p>Ручка</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Как по-русски "ماء"?<p>Вода</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Что значит "спасибо"?<p>شكرًا</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Как сказать "سيارة"?<p>Машина</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Как переводится "дом"?<p>منزل</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Что значит "еда"?<p>طعام</p></div>
+      <div class="card" onclick="toggleAnswer(this)">Как по-русски "أنا"?<p>Я</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleNightMode() {
+      document.body.classList.toggle('night-mode');
+    }
+
+    function toggleAnswer(card) {
+      const answer = card.querySelector("p");
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+      } else {
+        answer.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

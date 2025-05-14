@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>اختر مستواك في قواعد اللغة</title>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .toggle-btn {
+      background-color: #fff;
+      color: #007BFF;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .container {
+      padding: 40px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #007BFF;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .card a {
+      display: block;
+      background-color: white;
+      border: 2px solid #007BFF;
+      padding: 40px 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .card a:hover {
+      background-color: #cce5ff;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+
+    body.dark-mode header {
+      background-color: #1f3d72;
+    }
+
+    body.dark-mode .card a {
+      background-color: #444;
+      color: #fff;
+      border-color: #fff;
+    }
+
+    body.dark-mode .card a:hover {
+      background-color: #555;
+    }
+
+    body.dark-mode .toggle-btn {
+      background-color: #fff;
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html">الرئيسية</a>
+    <a href="english-goal.html">المفردات</a>
+    <a href="english-alphabet.html">الحروف</a>
+    <a href="english-audio.html">الاستماع</a>
+    <button class="toggle-btn" id="toggleMode">🌙 الوضع الليلي</button>
+  </div>
+
+  <header>
+    اختر مستواك في قواعد اللغة
+  </header>
+
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="english-goal.html">المفردات</a>
+    <a href="english-alphabet.html">الحروف</a>
+    <a href="english-audio.html">الاستماع</a>
+  </nav>
+
+  <div class="container">
+    <h2>اختر المستوى المناسب لك:</h2>
+
+    <div class="grid">
+      <div class="card"><a href="english-easy-grammar.html">مبتدئ</a></div>
+      <div class="card"><a href="english-mid-grammar.html">متوسط</a></div>
+      <div class="card"><a href="english-pro-grammar.html">محترف</a></div>
+    </div>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("toggleMode");
+    const body = document.body;
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      if (body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "🌞 الوضع النهاري";
+      } else {
+        toggleBtn.textContent = "🌙 الوضع الليلي";
+      }
+    });
+  </script>
+
+</body>
+</html>
