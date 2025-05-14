@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🧠 تقوية الذاكرة والقدرات الذهنية</title>
+  <link rel="shortcut icon" type="x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+      color: #000;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+      position: relative;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .toggle-btn {
+      position: absolute;
+      right: 20px;
+      background: white;
+      color: #007BFF;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+    h2 {
+      color: #007BFF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background-color: #b3d7ff;
+      padding: 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+
+    body.dark {
+      background: #121212;
+      color: #e0e0e0;
+    }
+    body.dark h2 {
+      color: #4da3ff;
+    }
+    body.dark .card {
+      background-color: #1e1e1e;
+      color: #4da3ff;
+    }
+    body.dark .toggle-btn {
+      background: #4da3ff;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>🧠 تقوية الذاكرة والقدرات الذهنية</header>
+
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="spanich-goal.html">السابق</a>
+    <button class="toggle-btn" onclick="toggleMode()">الوضع الليلي</button>
+  </nav>
+
+  <div class="container">
+    <h2>Vocabulario</h2>
+    <div class="grid">
+      <div class="card" onclick="speakWord('memoria')">memoria<br><p>ذاكرة</p></div>
+      <div class="card" onclick="speakWord('concentración')">concentración<br><p>تركيز</p></div>
+      <div class="card" onclick="speakWord('mente')">mente<br><p>عقل</p></div>
+      <div class="card" onclick="speakWord('inteligencia')">inteligencia<br><p>ذكاء</p></div>
+      <div class="card" onclick="speakWord('aprendizaje')">aprendizaje<br><p>تعلم</p></div>
+      <div class="card" onclick="speakWord('desarrollo')">desarrollo<br><p>تطور</p></div>
+      <div class="card" onclick="speakWord('pensamiento')">pensamiento<br><p>تفكير</p></div>
+      <div class="card" onclick="speakWord('retención')">retención<br><p>احتفاظ</p></div>
+      <div class="card" onclick="speakWord('habilidad')">habilidad<br><p>مهارة</p></div>
+      <div class="card" onclick="speakWord('ejercicio mental')">ejercicio mental<br><p>تمرين ذهني</p></div>
+      <div class="card" onclick="speakWord('palabra')">palabra<br><p>كلمة</p></div>
+      <div class="card" onclick="speakWord('idioma')">idioma<br><p>لغة</p></div>
+      <div class="card" onclick="speakWord('reto')">reto<br><p>تحدي</p></div>
+      <div class="card" onclick="speakWord('mente activa')">mente activa<br><p>عقل نشط</p></div>
+      <div class="card" onclick="speakWord('creatividad')">creatividad<br><p>إبداع</p></div>
+      <div class="card" onclick="speakWord('análisis')">análisis<br><p>تحليل</p></div>
+      <div class="card" onclick="speakWord('comprensión')">comprensión<br><p>استيعاب</p></div>
+      <div class="card" onclick="speakWord('conocimiento')">conocimiento<br><p>معرفة</p></div>
+      <div class="card" onclick="speakWord('disciplina')">disciplina<br><p>انضباط</p></div>
+      <div class="card" onclick="speakWord('organización')">organización<br><p>تنظيم</p></div>
+      <div class="card" onclick="speakWord('curiosidad')">curiosidad<br><p>فضول</p></div>
+      <div class="card" onclick="speakWord('autodisciplina')">autodisciplina<br><p>انضباط ذاتي</p></div>
+      <div class="card" onclick="speakWord('motivación')">motivación<br><p>تحفيز</p></div>
+      <div class="card" onclick="speakWord('práctica')">práctica<br><p>تدريب</p></div>
+      <div class="card" onclick="speakWord('habilidades cognitivas')">habilidades cognitivas<br><p>مهارات معرفية</p></div>
+      <div class="card" onclick="speakWord('lectura')">lectura<br><p>قراءة</p></div>
+      <div class="card" onclick="speakWord('estudio')">estudio<br><p>مذاكرة</p></div>
+      <div class="card" onclick="speakWord('entrenamiento')">entrenamiento<br><p>تدريب</p></div>
+      <div class="card" onclick="speakWord('lógica')">lógica<br><p>منطق</p></div>
+      <div class="card" onclick="speakWord('información')">información<br><p>معلومة</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark");
+      const btn = document.querySelector(".toggle-btn");
+      btn.textContent = document.body.classList.contains("dark") ? "الوضع النهاري" : "الوضع الليلي";
+    }
+
+    function speakWord(word) {
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = 'es-ES'; 
+      window.speechSynthesis.speak(utterance);
+    }
+  </script>
+
+</body>
+</html>

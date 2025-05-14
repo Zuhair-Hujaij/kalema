@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>نصوص تعليمية - الروسية</title>
+    <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+    <style>
+        body { font-family: Arial; margin: 0; background: #fff; transition: background-color 0.3s, color 0.3s; }
+        
+        /* Navbar styles */
+        .navbar { 
+            background: #007BFF; 
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .navbar a { color: white; padding: 14px; text-decoration: none; display: block; }
+        .navbar a:hover { background: #0056b3; }
+        
+        .navbar button {
+            background: #fff; 
+            color: #007BFF; 
+            border: none; 
+            padding: 8px 12px; 
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .navbar button:hover { background: #cce5ff; }
+        
+        .content { padding: 20px; }
+        h2 { color: #007BFF; }
+
+        p { font-size: 16px; line-height: 1.6; }
+        button { background: #007BFF; color: white; border: none; padding: 8px 12px; margin-bottom: 10px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        body.dark-mode .navbar {
+            background-color: #444;
+        }
+
+        body.dark-mode h2, body.dark-mode p, body.dark-mode button {
+            color: #fff;
+        }
+
+        body.dark-mode .navbar a {
+            color: #fff;
+        }
+
+        body.dark-mode .navbar a:hover {
+            background: #555;
+        }
+
+        body.dark-mode button {
+            background-color: #444;
+            color: #fff;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">الرئيسية</a>
+        <a href="tools.html">السابق</a>
+        <button onclick="toggleDarkMode()">الوضع الليلي</button>
+    </div>
+
+    <div class="content">
+        <h2>Русский образовательный текст</h2>
+        <button onclick="speakText('russianText', 'ru')">🔊 استمع للنص الروسي</button>
+        <p id="russianText">
+            Жизнь полна возможностей для роста и обучения. Каждый опыт, будь то хороший или плохой, чему-то учит нас.
+            Научившись справляться с ними, мы становимся более мудрыми и способны лучше использовать возможности,
+            которые нам дает будущее. Никогда не прекращайте учиться!
+        </p>
+
+        <h2>النص المترجم إلى العربية</h2>
+        <button onclick="speakText('arabicText', 'ar')">🔊 استمع للنص العربي</button>
+        <p id="arabicText">
+            الحياة مليئة بالفرص للنمو والتعلم. كل تجربة، سواء كانت جيدة أو سيئة، تعلمنا شيئًا.
+            تعلم كيفية التعامل مع هذه التجارب يجعلنا أشخاصًا أكثر حكمة وقادرين على الاستفادة من الفرص
+            التي سيقدمها لنا المستقبل. لا تتوقف أبدًا عن التعلم!
+        </p>
+    </div>
+
+    <script>
+        function speakText(elementId, lang) {
+            const text = document.getElementById(elementId).innerText;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            speechSynthesis.speak(utterance);
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>

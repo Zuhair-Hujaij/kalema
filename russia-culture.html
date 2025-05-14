@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Понимание новых культур - فهم ثقافات جديدة</title>
+  <link rel="shortcut icon" type="x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+    h2 {
+      color: #007BFF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background-color: #b3d7ff;
+      padding: 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+    body.dark-mode {
+      background-color: #333;
+      color: white;
+    }
+    header.dark-mode {
+      background-color: #444;
+    }
+    nav.dark-mode {
+      background-color: #444;
+    }
+    .card.dark-mode {
+      background-color: #555;
+      color: white;
+    }
+    .grid.dark-mode {
+      color: white;
+    }
+    .mode-toggle {
+      cursor: pointer;
+      color: white;
+      font-size: 18px;
+      padding: 5px 10px;
+      background-color: #444;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Понимание новых культур - فهم ثقافات جديدة
+  </header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="russia-goal.html">السابق</a>
+    <button class="mode-toggle" onclick="toggleMode()">🌙 الوضع الليلي</button>
+  </nav>
+
+  <div class="container">
+    <h2>المفردات الخاصة بفهم ثقافات جديدة باللغة الروسية</h2>
+    <div class="grid">
+      <div class="card" onclick="speak('Культура')">Культура<br><p>ثقافة</p></div>
+      <div class="card" onclick="speak('Традиции')">Традиции<br><p>تقاليد</p></div>
+      <div class="card" onclick="speak('Обычаи')">Обычаи<br><p>عادات</p></div>
+      <div class="card" onclick="speak('Религия')">Религия<br><p>دين</p></div>
+      <div class="card" onclick="speak('Язык')">Язык<br><p>لغة</p></div>
+      <div class="card" onclick="speak('Искусство')">Искусство<br><p>فن</p></div>
+      <div class="card" onclick="speak('Праздники')">Праздники<br><p>مهرجانات</p></div>
+      <div class="card" onclick="speak('Гостеприимство')">Гостеприимство<br><p>ضيافة</p></div>
+      <div class="card" onclick="speak('Кухня')">Кухня<br><p>مطبخ</p></div>
+      <div class="card" onclick="speak('Театр')">Театр<br><p>مسرح</p></div>
+      <div class="card" onclick="speak('Музыка')">Музыка<br><p>موسيقى</p></div>
+      <div class="card" onclick="speak('Фольклор')">Фольклор<br><p>فولكلور</p></div>
+      <div class="card" onclick="speak('Мифы')">Мифы<br><p>أساطير</p></div>
+      <div class="card" onclick="speak('Литература')">Литература<br><p>أدب</p></div>
+      <div class="card" onclick="speak('Ремесла')">Ремесла<br><p>حرف يدوية</p></div>
+      <div class="card" onclick="speak('Танцы')">Танцы<br><p>رقص</p></div>
+      <div class="card" onclick="speak('Кино')">Кино<br><p>سينما</p></div>
+      <div class="card" onclick="speak('История')">История<br><p>تاريخ</p></div>
+      <div class="card" onclick="speak('Народ')">Народ<br><p>شعب</p></div>
+      <div class="card" onclick="speak('Климат')">Климат<br><p>مناخ</p></div>
+      <div class="card" onclick="speak('Одежда')">Одежда<br><p>ملابس</p></div>
+      <div class="card" onclick="speak('Песни')">Песни<br><p>أغاني</p></div>
+      <div class="card" onclick="speak('Танец')">Танец<br><p>رقصة</p></div>
+      <div class="card" onclick="speak('Образование')">Образование<br><p>تعليم</p></div>
+      <div class="card" onclick="speak('Наследие')">Наследие<br><p>تراث</p></div>
+      <div class="card" onclick="speak('Путешествия')">Путешествия<br><p>رحلات</p></div>
+      <div class="card" onclick="speak('Семья')">Семья<br><p>عائلة</p></div>
+      <div class="card" onclick="speak('Философия')">Философия<br><p>فلسفة</p></div>
+      <div class="card" onclick="speak('Менталитет')">Менталитет<br><p>عقلية</p></div>
+      <div class="card" onclick="speak('Ценности')">Ценности<br><p>قيم</p></div>
+      <div class="card" onclick="speak('Мода')">Мода<br><p>موضة</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const header = document.querySelector('header');
+      const nav = document.querySelector('nav');
+      const cards = document.querySelectorAll('.card');
+
+      body.classList.toggle('dark-mode');
+      header.classList.toggle('dark-mode');
+      nav.classList.toggle('dark-mode');
+      cards.forEach(card => card.classList.toggle('dark-mode'));
+
+      const modeButton = document.querySelector('.mode-toggle');
+      if (body.classList.contains('dark-mode')) {
+        modeButton.innerText = '☀️ الوضع النهاري';
+      } else {
+        modeButton.innerText = '🌙 الوضع الليلي';
+      }
+    }
+
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'ru-RU';  
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>

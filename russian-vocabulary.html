@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <meta charset="UTF-8">
+  <title>Russian Vocabulary - المفردات الأساسية الروسية</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      background-color: #0056b3;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+    header a:hover {
+      background-color: #004494;
+    }
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+    h2 {
+      color: #007BFF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .card {
+      background-color: #b3d7ff;
+      padding: 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-weight: bold;
+    }
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+
+    body.dark-mode header {
+      background-color: #444;
+    }
+
+    body.dark-mode h2, body.dark-mode p, body.dark-mode .card {
+      color: #fff;
+    }
+
+    body.dark-mode .card {
+      background-color: #555;
+    }
+
+    body.dark-mode .grid {
+      background-color: #444;
+    }
+
+    body.dark-mode header a {
+      color: #fff;
+      background-color: #666;
+    }
+
+    body.dark-mode header a:hover {
+      background-color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Russian Vocabulary - المفردات الأساسية الروسية
+    <button onclick="toggleDarkMode()" style="background-color: #fff; color: #007BFF; padding: 8px 12px; border: none; cursor: pointer; border-radius: 5px;">🌙 Dark Mode</button>
+  </header>
+
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="russian-grammar.html">القواعد</a>
+    <a href="russian-audio.html">الاستماع</a>
+    <a href="russian-alphabet.html">الحروف</a>
+  </nav>
+
+  <div class="container">
+    <h2>Basic Russian Vocabulary</h2>
+    <div class="grid">
+      <div class="card">Hello<br><p>Здравствуйте - مرحباً</p></div>
+      <div class="card">Thank you<br><p>Спасибо - شكراً</p></div>
+      <div class="card">Goodbye<br><p>До свидания - وداعاً</p></div>
+      <div class="card">Please<br><p>Пожалуйста - من فضلك</p></div>
+      <div class="card">Yes / No<br><p>Да / Нет - نعم / لا</p></div>
+      <div class="card">Food<br><p>Еда - طعام</p></div>
+      <div class="card">Water<br><p>Вода - ماء</p></div>
+      <div class="card">Where?<br><p>Где? - أين؟</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+</body>
+</html>

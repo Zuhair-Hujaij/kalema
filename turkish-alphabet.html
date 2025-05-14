@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" type="x-icon" href="C:\website\website\image\logo.png">
+  <meta charset="UTF-8">
+  <title>Turkish Alphabet - الحروف التركية</title>
+  <style>
+    :root {
+      --main-color: #007BFF;
+      --bg-color: #e6f9fa;
+      --text-color: #000;
+      --card-bg-color: #b3d7ff;
+      --navbar-bg: #007BFF;
+    }
+
+    .dark-mode {
+      --main-color: #1a1a2e;
+      --bg-color: #121212;
+      --text-color: #fff;
+      --card-bg-color: #333;
+      --navbar-bg: #1a1a2e;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: 0.3s;
+    }
+
+    header {
+      background-color: var(--navbar-bg);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: var(--navbar-bg);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--main-color);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: var(--card-bg-color);
+      padding: 20px;
+      border-radius: 10px;
+      color: var(--main-color);
+      font-weight: bold;
+    }
+
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+
+    .toggle-btn {
+      background: none;
+      color: white;
+      border: none;
+      padding: 14px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .toggle-btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Turkish Alphabet - الحروف التركية
+  </header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="turkish-goal.html">المفردات</a>
+    <a href="turkish-grammar-level.html">لقواعد</a>
+    <a href="turkish-audio.html">الاستماع</a>
+    <button class="toggle-btn" onclick="toggleMode()">🌓 الوضع الليلي</button>
+  </nav>
+  <div class="container">
+    <h2>Turkish Alphabet</h2>
+    <div class="grid">
+      <div class="card">A<br><p>آ</p></div>
+      <div class="card">B<br><p>ب</p></div>
+      <div class="card">C<br><p>جي</p></div>
+      <div class="card">Ç<br><p>تش</p></div>
+      <div class="card">D<br><p>د</p></div>
+      <div class="card">E<br><p>إي</p></div>
+      <div class="card">F<br><p>ف</p></div>
+      <div class="card">G<br><p>غ</p></div>
+      <div class="card">Ğ<br><p>غ (مؤقتة)</p></div>
+      <div class="card">H<br><p>ه</p></div>
+      <div class="card">I<br><p>ي</p></div>
+      <div class="card">İ<br><p>إ</p></div>
+      <div class="card">J<br><p>ج</p></div>
+      <div class="card">K<br><p>ك</p></div>
+      <div class="card">L<br><p>ل</p></div>
+      <div class="card">M<br><p>م</p></div>
+      <div class="card">N<br><p>ن</p></div>
+      <div class="card">O<br><p>و</p></div>
+      <div class="card">Ö<br><p>أو</p></div>
+      <div class="card">P<br><p>ب</p></div>
+      <div class="card">R<br><p>ر</p></div>
+      <div class="card">S<br><p>س</p></div>
+      <div class="card">Ş<br><p>ش</p></div>
+      <div class="card">T<br><p>ت</p></div>
+      <div class="card">U<br><p>و</p></div>
+      <div class="card">Ü<br><p>أو</p></div>
+      <div class="card">V<br><p>ف</p></div>
+      <div class="card">Y<br><p>ي</p></div>
+      <div class="card">Z<br><p>ز</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>

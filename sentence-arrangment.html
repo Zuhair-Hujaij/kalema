@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لعبة ترتيب الجمل</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      color: #007BFF;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar {
+      background-color: #007BFF;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .sentence-section {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .word {
+      display: inline-block;
+      background-color: #ffffff;
+      border: 2px solid #007BFF;
+      padding: 10px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    #scoreDisplay {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    #timeDisplay {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    /* وضع الليل */
+    body.night-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    .navbar.night-mode {
+      background-color: #333;
+    }
+
+    button.night-mode {
+      background-color: #333;
+      color: #ffffff;
+    }
+
+    .word.night-mode {
+      background-color: #333;
+      border: 2px solid #ffffff;
+    }
+
+    /* زر الوضع الليلي في الشريط الأزرق */
+    .night-mode-toggle {
+      background-color: #f39c12;
+      color: white;
+      padding: 5px 15px;
+      cursor: pointer;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html">الرئيسية</a>
+    <a href="word-match.html">مطابقة الكلمات</a>
+    <a href="vocabulary-quiz.html">إختبار المفردات</a>
+    <button class="night-mode-toggle" onclick="toggleNightMode()">الوضع الليلي</button>
+  </div>
+
+  <div class="content">
+    <h1>📚 لعبة ترتيب الجمل</h1>
+    <label for="language">اختر اللغة:</label>
+    <select id="language">
+      <option value="en">الإنجليزية</option>
+      <option value="fr">الفرنسية</option>
+      <option value="es">الإسبانية</option>
+      <option value="zh">الصينية</option>
+      <option value="ru">الروسية</option>
+      <option value="tr">التركية</option>
+    </select>
+    <label for="level">اختر المستوى:</label>
+    <select id="level">
+      <option value="easy">سهل</option>
+      <option value="medium">متوسط</option>
+      <option value="hard">صعب</option>
+    </select>
+    <button onclick="startSentenceGame()">ابدأ</button>
+
+    <p id="scoreDisplay">النقاط: 0</p>
+    <p id="timeDisplay">الوقت: 60 ثانية</p>
+
+    <div class="sentence-section" id="game">
+      <h2>رتب الكلمات لتكوين جملة صحيحة</h2>
+      <div id="words"></div>
+      <div id="result"></div>
+      <button onclick="checkSentence()">تحقق</button>
+      <button onclick="nextSentence()">جملة أخرى</button>
+    </div>
+  </div>
+
+  <script>
+    const sentenceSets = {
+      en: {
+        easy: [
+          "I love learning",
+          "The sun is hot",
+          "She is happy",
+          "He likes to read",
+          "The sky is blue"
+        ],
+        medium: [
+          "The cat is on the table",
+          "He plays football every weekend",
+          "We are learning English",
+          "She goes to school every day",
+          "I read a book every night"
+        ],
+        hard: [
+          "Although it was raining, we went outside",
+          "She has been working here for five years",
+          "They should have arrived by now",
+          "The children were playing in the park when it started raining",
+          "She asked if I could help her with the project"
+        ]
+      },
+      // باقي اللغات...
+    };
+
+    let currentLang = 'en';
+    let currentLevel = 'easy';
+    let currentSentence = '';
+    let selectedWords = [];
+    let score = 0;
+    let time = 60;
+    let timer;
+
+    function updateScoreDisplay() {
+      document.getElementById('scoreDisplay').innerText = `النقاط: ${score}`;
+    }
+
+    function updateTimeDisplay() {
+      document.getElementById('timeDisplay').innerText = `الوقت: ${time} ثانية`;
+    }
+
+    function startSentenceGame() {
+      currentLang = document.getElementById('language').value;
+      currentLevel = document.getElementById('level').value;
+      score = 0;
+      time = 60;
+      updateScoreDisplay();
+      updateTimeDisplay();
+      document.getElementById('game').style.display = 'block';
+      nextSentence();
+      if (timer) clearInterval(timer);
+      timer = setInterval(countdown, 1000);
+    }
+
+    function countdown() {
+      time--;
+      updateTimeDisplay();
+      if (time <= 0) {
+        clearInterval(timer);
+        document.getElementById('result').innerText = '⏰ انتهى الوقت!';
+        document.getElementById('result').style.color = 'orange';
+        disableWords();
+      }
+    }
+
+    function disableWords() {
+      const wordElements = document.querySelectorAll('.word');
+      wordElements.forEach(span => {
+        span.onclick = null;
+      });
+    }
+
+    function nextSentence() {
+      const sentences = sentenceSets[currentLang][currentLevel];
+      currentSentence = sentences[Math.floor(Math.random() * sentences.length)];
+      const words = currentSentence.split(' ');
+      const shuffled = words.slice().sort(() => 0.5 - Math.random());
+      selectedWords = [];
+
+      const container = document.getElementById('words');
+      container.innerHTML = '';
+      document.getElementById('result').innerText = '';
+
+      shuffled.forEach(word => {
+        const span = document.createElement('span');
+        span.className = 'word';
+        span.innerText = word;
+        span.onclick = () => selectWord(span, word);
+        container.appendChild(span);
+      });
+    }
+
+    function selectWord(span, word) {
+      if (span.style.visibility === 'hidden') return;
+      selectedWords.push(word);
+      span.style.visibility = 'hidden';
+    }
+
+    function checkSentence() {
+      const userSentence = selectedWords.join(' ');
+      const result = document.getElementById('result');
+      if (userSentence === currentSentence) {
+        result.innerText = '✅ صحيح!';
+        result.style.color = 'green';
+        score++;
+        updateScoreDisplay();
+      } else {
+        result.innerText = '❌ حاول مرة أخرى';
+        result.style.color = 'red';
+      }
+    }
+
+    function toggleNightMode() {
+      document.body.classList.toggle('night-mode');
+      document.querySelector('.navbar').classList.toggle('night-mode');
+      document.querySelectorAll('.word').forEach(word => word.classList.toggle('night-mode'));
+      document.querySelector('.night-mode-toggle').classList.toggle('night-mode');
+    }
+  </script>
+</body>
+</html>

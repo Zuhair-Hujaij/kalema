@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Укрепление памяти и умственных способностей - تقوية الذاكرة والقدرات الذهنية</title>
+  <link rel="shortcut icon" type="x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+    h2 {
+      color: #007BFF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background-color: #b3d7ff;
+      padding: 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #e6e6e6;
+    }
+
+    header.dark-mode {
+      background-color: #333;
+    }
+
+    nav.dark-mode {
+      background-color: #333;
+    }
+
+    .card.dark-mode {
+      background-color: #555;
+      color: #e6e6e6;
+    }
+
+    h2.dark-mode {
+      color: #e6e6e6;
+    }
+
+    .toggle-btn {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .toggle-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Укрепление памяти и умственных способностей - تقوية الذاكرة والقدرات الذهنية
+</header>
+
+<nav>
+  <a href="index.html">الرئيسية</a>
+  <a href="russia-goal.html">السابق</a>
+  <button class="toggle-btn" onclick="toggleDarkMode()">وضع الليل/النهار</button>
+</nav>
+
+<div class="container">
+  <h2>المفردات الخاصة بتقوية الذاكرة والقدرات الذهنية باللغة الروسية</h2>
+  <div class="grid">
+    <div class="card" onclick="speakWord('Память')">Память<br><p>ذاكرة</p></div>
+    <div class="card" onclick="speakWord('Мозг')">Мозг<br><p>دماغ</p></div>
+    <div class="card" onclick="speakWord('Умственные способности')">Умственные способности<br><p>القدرات الذهنية</p></div>
+    <div class="card" onclick="speakWord('Концентрация')">Концентрация<br><p>تركيز</p></div>
+    <div class="card" onclick="speakWord('Медитация')">Медитация<br><p>تأمل</p></div>
+    <div class="card" onclick="speakWord('Обучение')">Обучение<br><p>تعليم</p></div>
+    <div class="card" onclick="speakWord('Запоминание')">Запоминание<br><p>تذكر</p></div>
+    <div class="card" onclick="speakWord('Когнитивные функции')">Когнитивные функции<br><p>الوظائف المعرفية</p></div>
+    <div class="card" onclick="speakWord('Развитие')">Развитие<br><p>تطور</p></div>
+    <div class="card" onclick="speakWord('Упражнения для мозга')">Упражнения для мозга<br><p>تمارين للدماغ</p></div>
+    <div class="card" onclick="speakWord('Внимание')">Внимание<br><p>انتباه</p></div>
+    <div class="card" onclick="speakWord('Активность')">Активность<br><p>نشاط</p></div>
+    <div class="card" onclick="speakWord('Задачи')">Задачи<br><p>مهام</p></div>
+    <div class="card" onclick="speakWord('Тренировка памяти')">Тренировка памяти<br><p>تدريب الذاكرة</p></div>
+    <div class="card" onclick="speakWord('Нейропластичность')">Нейропластичность<br><p>اللدونة العصبية</p></div>
+    <div class="card" onclick="speakWord('Здоровье')">Здоровье<br><p>صحة</p></div>
+    <div class="card" onclick="speakWord('Сон')">Сон<br><p>نوم</p></div>
+    <div class="card" onclick="speakWord('Мотивация')">Мотивация<br><p>تحفيز</p></div>
+    <div class="card" onclick="speakWord('Оценка')">Оценка<br><p>تقييم</p></div>
+    <div class="card" onclick="speakWord('Повторение')">Повторение<br><p>تكرار</p></div>
+    <div class="card" onclick="speakWord('Умственная активность')">Умственная активность<br><p>النشاط العقلي</p></div>
+    <div class="card" onclick="speakWord('Восстановление')">Восстановление<br><p>استعادة</p></div>
+    <div class="card" onclick="speakWord('Тестирование')">Тестирование<br><p>اختبار</p></div>
+    <div class="card" onclick="speakWord('Сложные задачи')">Сложные задачи<br><p>مهام معقدة</p></div>
+    <div class="card" onclick="speakWord('Уровень интеллекта')">Уровень интеллекта<br><p>مستوى الذكاء</p></div>
+    <div class="card" onclick="speakWord('Адаптация')">Адаптация<br><p>تكييف</p></div>
+    <div class="card" onclick="speakWord('Мышление')">Мышление<br><p>تفكير</p></div>
+    <div class="card" onclick="speakWord('Новые знания')">Новые знания<br><p>معرفة جديدة</p></div>
+  </div>
+</div>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    document.querySelector('header').classList.toggle('dark-mode');
+    document.querySelector('nav').classList.toggle('dark-mode');
+    document.querySelectorAll('.card').forEach(card => card.classList.toggle('dark-mode'));
+    document.querySelectorAll('h2').forEach(h2 => h2.classList.toggle('dark-mode'));
+  }
+
+  function speakWord(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'ru-RU';  
+    speechSynthesis.speak(utterance);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Путешествия и Исследование Мира</title>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      background-color: #0056b3;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+    header a:hover {
+      background-color: #004494;
+    }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+    h2 {
+      color: #007BFF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background-color: #d9ecff;
+      padding: 15px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+
+    body.dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+
+    body.dark-mode header {
+      background-color: #444;
+    }
+
+    body.dark-mode h2, body.dark-mode p, body.dark-mode .card {
+      color: #fff;
+    }
+
+    body.dark-mode .card {
+      background-color: #555;
+    }
+
+    body.dark-mode .grid {
+      background-color: #444;
+    }
+
+    body.dark-mode header a {
+      color: #fff;
+      background-color: #666;
+    }
+
+    body.dark-mode header a:hover {
+      background-color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Путешествия и Исследование Мира - السفر واستكشاف العالم
+    <div>
+      <a href="index.html">الرئيسية</a>
+      <a href="russia-goal.html">السابق</a>
+      <button onclick="toggleDarkMode()" style="background-color: #fff; color: #007BFF; padding: 8px 12px; border: none; cursor: pointer; border-radius: 5px;">🌙 الوضع الليلي</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>Модуль слов: путешествия ✈️</h2>
+    <div class="grid">
+      <div class="card" onclick="speakWord('поездка')">поездка <p>رحلة</p></div>
+      <div class="card" onclick="speakWord('самолёт')">самолёт <p>طائرة</p></div>
+      <div class="card" onclick="speakWord('аэропорт')">аэропорт <p>مطار</p></div>
+      <div class="card" onclick="speakWord('багаж')">багаж <p>أمتعة</p></div>
+      <div class="card" onclick="speakWord('паспорт')">паспорт <p>جواز سفر</p></div>
+      <div class="card" onclick="speakWord('виза')">виза <p>تأشيرة</p></div>
+      <div class="card" onclick="speakWord('карта')">карта <p>خريطة</p></div>
+      <div class="card" onclick="speakWord('гид')">гид <p>دليل سياحي</p></div>
+      <div class="card" onclick="speakWord('турист')">турист <p>سائح</p></div>
+      <div class="card" onclick="speakWord('поезд')">поезд <p>قطار</p></div>
+      <div class="card" onclick="speakWord('станция')">станция <p>محطة</p></div>
+      <div class="card" onclick="speakWord('отель')">отель <p>فندق</p></div>
+      <div class="card" onclick="speakWord('бронирование')">бронирование <p>حجز</p></div>
+      <div class="card" onclick="speakWord('путешествие')">путешествие <p>سفر</p></div>
+      <div class="card" onclick="speakWord('пляж')">пляж <p>شاطئ</p></div>
+      <div class="card" onclick="speakWord('камера')">камера <p>كاميرا</p></div>
+      <div class="card" onclick="speakWord('поход')">поход <p>تخييم</p></div>
+      <div class="card" onclick="speakWord('тур')">тур <p>جولة</p></div>
+      <div class="card" onclick="speakWord('музей')">музей <p>متحف</p></div>
+      <div class="card" onclick="speakWord('достопримечательность')">достопримечательность <p>معلم سياحي</p></div>
+      <div class="card" onclick="speakWord('приключение')">приключение <p>مغامرة</p></div>
+      <div class="card" onclick="speakWord('открытие')">открытие <p>اكتشاف</p></div>
+      <div class="card" onclick="speakWord('лодка')">лодка <p>قارب</p></div>
+      <div class="card" onclick="speakWord('погода')">погода <p>طقس</p></div>
+      <div class="card" onclick="speakWord('природа')">природа <p>طبيعة</p></div>
+      <div class="card" onclick="speakWord('направление')">направление <p>اتجاه</p></div>
+      <div class="card" onclick="speakWord('путь')">путь <p>طريق</p></div>
+      <div class="card" onclick="speakWord('билет')">билет <p>تذكرة</p></div>
+      <div class="card" onclick="speakWord('таможня')">таможня <p>جمارك</p></div>
+      <div class="card" onclick="speakWord('гостеприимство')">гостеприимство <p>ضيافة</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    function speakWord(word) {
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = 'ru-RU'; 
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+
+</body>
+</html>

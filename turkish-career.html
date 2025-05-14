@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>اللغة التركية - تطوير المهارات المهنية</title>
+  <link rel="shortcut icon" type="x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    :root {
+      --main-color: #007BFF;
+      --bg-color: #e6f9fa;
+      --text-color: #000;
+      --card-bg-color: #b3d7ff;
+      --navbar-bg: #007BFF;
+    }
+
+    .dark-mode {
+      --main-color: #1a1a2e;
+      --bg-color: #121212;
+      --text-color: #fff;
+      --card-bg-color: #333;
+      --navbar-bg: #1a1a2e;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: 0.3s;
+    }
+
+    header {
+      background-color: var(--navbar-bg);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: var(--navbar-bg);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .toggle-btn {
+      background: none;
+      color: white;
+      border: none;
+      padding: 14px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .toggle-btn:hover {
+      background: #0056b3;
+    }
+
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--main-color);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: var(--card-bg-color);
+      padding: 20px;
+      border-radius: 10px;
+      color: var(--main-color);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    اللغة التركية - تطوير المهارات المهنية
+  </header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="turkish-goal.html">السابق</a>
+    <button class="toggle-btn" onclick="toggleMode()">🌓 الوضع الليلي</button>
+  </nav>
+  <div class="container">
+    <h2>تطوير المهارات المهنية</h2>
+    <div class="grid">
+      <div class="card" onclick="speak('iş')">iş<br><p>عمل</p></div>
+      <div class="card" onclick="speak('ofis')">ofis<br><p>مكتب</p></div>
+      <div class="card" onclick="speak('toplantı')">toplantı<br><p>اجتماع</p></div>
+      <div class="card" onclick="speak('bilgisayar')">bilgisayar<br><p>حاسوب</p></div>
+      <div class="card" onclick="speak('proje')">proje<br><p>مشروع</p></div>
+      <div class="card" onclick="speak('sunum')">sunum<br><p>عرض تقديمي</p></div>
+      <div class="card" onclick="speak('çalışan')">çalışan<br><p>موظف</p></div>
+      <div class="card" onclick="speak('yönetici')">yönetici<br><p>مدير</p></div>
+      <div class="card" onclick="speak('girişimci')">girişimci<br><p>رائد أعمال</p></div>
+      <div class="card" onclick="speak('maaş')">maaş<br><p>راتب</p></div>
+      <div class="card" onclick="speak('özgeçmiş')">özgeçmiş<br><p>سيرة ذاتية</p></div>
+      <div class="card" onclick="speak('başvuru')">başvuru<br><p>طلب</p></div>
+      <div class="card" onclick="speak('görüşme')">görüşme<br><p>مقابلة</p></div>
+      <div class="card" onclick="speak('yetenek')">yetenek<br><p>مهارة</p></div>
+      <div class="card" onclick="speak('tecrübe')">tecrübe<br><p>خبرة</p></div>
+      <div class="card" onclick="speak('eğitim')">eğitim<br><p>تعليم</p></div>
+      <div class="card" onclick="speak('şirket')">şirket<br><p>شركة</p></div>
+      <div class="card" onclick="speak('iş arkadaşı')">iş arkadaşı<br><p>زميل عمل</p></div>
+      <div class="card" onclick="speak('rapor')">rapor<br><p>تقرير</p></div>
+      <div class="card" onclick="speak('sözleşme')">sözleşme<br><p>عقد</p></div>
+      <div class="card" onclick="speak('lider')">lider<br><p>قائد</p></div>
+      <div class="card" onclick="speak('motivasyon')">motivasyon<br><p>تحفيز</p></div>
+      <div class="card" onclick="speak('terfi')">terfi<br><p>ترقية</p></div>
+      <div class="card" onclick="speak('kariyer')">kariyer<br><p>مسار مهني</p></div>
+      <div class="card" onclick="speak('departman')">departman<br><p>قسم</p></div>
+      <div class="card" onclick="speak('müşteri')">müşteri<br><p>عميل</p></div>
+      <div class="card" onclick="speak('hizmet')">hizmet<br><p>خدمة</p></div>
+      <div class="card" onclick="speak('hedef')">hedef<br><p>هدف</p></div>
+      <div class="card" onclick="speak('başarı')">başarı<br><p>نجاح</p></div>
+      <div class="card" onclick="speak('zaman yönetimi')">zaman yönetimi<br><p>إدارة الوقت</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    function speak(text) {
+      var utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'tr-TR'; 
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>اللغة التركية - التواصل مع أصدقاء من دول أخرى</title>
+  <link rel="shortcut icon" type="x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      position: relative;
+    }
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+    h2 {
+      color: #007BFF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background-color: #b3d7ff;
+      padding: 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+
+    body.night {
+      background: #333;
+      color: white;
+    }
+    body.night header {
+      background-color: #444;
+    }
+    body.night .card {
+      background-color: #555;
+      color: #fff;
+    }
+    body.night .card p {
+      color: #ccc;
+    }
+    body.night nav {
+      background-color: #444;
+    }
+
+    .night-mode-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #fff;
+      color: #007BFF;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .night-mode-btn:hover {
+      background-color: #007BFF;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    اللغة التركية - التواصل مع أصدقاء من دول أخرى
+    <button class="night-mode-btn" onclick="toggleNightMode()">الوضع الليلي</button>
+  </header>
+
+  <nav>
+    <a href="index.html"> الرئيسية</a>
+    <a href="turkish-goal.html">السابق</a>
+  </nav>
+
+  <div class="container">
+    <h2>التواصل مع أصدقاء من دول أخرى</h2>
+    <div class="grid">
+      <div class="card" onclick="speakWord('arkadaş')">arkadaş<br><p>صديق</p></div>
+      <div class="card" onclick="speakWord('konuşmak')">konuşmak<br><p>يتحدث</p></div>
+      <div class="card" onclick="speakWord('mesaj')">mesaj<br><p>رسالة</p></div>
+      <div class="card" onclick="speakWord('sohbet')">sohbet<br><p>دردشة</p></div>
+      <div class="card" onclick="speakWord('selam')">selam<br><p>تحية</p></div>
+      <div class="card" onclick="speakWord('tanışmak')">tanışmak<br><p>يتعرف</p></div>
+      <div class="card" onclick="speakWord('buluşmak')">buluşmak<br><p>يقابل</p></div>
+      <div class="card" onclick="speakWord('yardım')">yardım<br><p>مساعدة</p></div>
+      <div class="card" onclick="speakWord('espri')">espri<br><p>نكتة</p></div>
+      <div class="card" onclick="speakWord('gülmek')">gülmek<br><p>يضحك</p></div>
+      <div class="card" onclick="speakWord('ziyaret')">ziyaret<br><p>زيارة</p></div>
+      <div class="card" onclick="speakWord('paylaşmak')">paylaşmak<br><p>يشارك</p></div>
+      <div class="card" onclick="speakWord('hediye')">hediye<br><p>هدية</p></div>
+      <div class="card" onclick="speakWord('davet')">davet<br><p>دعوة</p></div>
+      <div class="card" onclick="speakWord('kutlama')">kutlama<br><p>احتفال</p></div>
+      <div class="card" onclick="speakWord('dostluk')">dostluk<br><p>صداقة</p></div>
+      <div class="card" onclick="speakWord('güven')">güven<br><p>ثقة</p></div>
+      <div class="card" onclick="speakWord('destek')">destek<br><p>دعم</p></div>
+      <div class="card" onclick="speakWord('tebrik')">tebrik<br><p>تهنئة</p></div>
+      <div class="card" onclick="speakWord('numara')">numara<br><p>رقم</p></div>
+      <div class="card" onclick="speakWord('telefon')">telefon<br><p>هاتف</p></div>
+      <div class="card" onclick="speakWord('internet')">internet<br><p>إنترنت</p></div>
+      <div class="card" onclick="speakWord('bağlantı')">bağlantı<br><p>اتصال</p></div>
+      <div class="card" onclick="speakWord('iletişim')">iletişim<br><p>تواصل</p></div>
+      <div class="card" onclick="speakWord('arkadaşlık sitesi')">arkadaşlık sitesi<br><p>موقع تعارف</p></div>
+      <div class="card" onclick="speakWord('takip etmek')">takip etmek<br><p>يتابع</p></div>
+      <div class="card" onclick="speakWord('paylaşım')">paylaşım<br><p>منشور</p></div>
+      <div class="card" onclick="speakWord('yorum')">yorum<br><p>تعليق</p></div>
+      <div class="card" onclick="speakWord('beğeni')">beğeni<br><p>إعجاب</p></div>
+      <div class="card" onclick="speakWord('sohbet grubu')">sohbet grubu<br><p>مجموعة دردشة</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleNightMode() {
+      document.body.classList.toggle('night');
+      let button = document.querySelector('.night-mode-btn');
+      if (document.body.classList.contains('night')) {
+        button.textContent = 'الوضع النهاري';
+      } else {
+        button.textContent = 'الوضع الليلي';
+      }
+    }
+
+    function speakWord(word) {
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = 'tr-TR'; 
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+
+</body>
+</html>

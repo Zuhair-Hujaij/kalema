@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🎓 الدراسة بالخارج</title>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    :root {
+      --main-color: #007BFF;
+      --bg-color: #e6f9fa;
+      --text-color: #000;
+      --card-bg: #b3d7ff;
+      --card-text: #007BFF;
+    }
+
+    .dark-mode {
+      --main-color: #1a1a2e;
+      --bg-color: #121212;
+      --text-color: #fff;
+      --card-bg: #2a2a2a;
+      --card-text: #4e9fff;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: 0.3s;
+    }
+
+    header {
+      background-color: var(--main-color);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: var(--main-color);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a, .toggle-btn {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 5px;
+    }
+
+    nav a:hover, .toggle-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--main-color);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 10px;
+      color: var(--card-text);
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+  <header>🎓 الدراسة بالخارج</header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="spanich-goal.html">السابق</a>
+    <button class="toggle-btn" onclick="toggleMode()">🌓 الوضع الليلي</button>
+  </nav>
+  <div class="container">
+    <h2>Vocabulario</h2>
+    <div class="grid">
+      <div class="card" onclick="speakWord('estudiar')">estudiar<br><p>يدرس</p></div>
+      <div class="card" onclick="speakWord('universidad')">universidad<br><p>جامعة</p></div>
+      <div class="card" onclick="speakWord('escuela')">escuela<br><p>مدرسة</p></div>
+      <div class="card" onclick="speakWord('profesor')">profesor<br><p>أستاذ</p></div>
+      <div class="card" onclick="speakWord('alumno')">alumno<br><p>طالب</p></div>
+      <div class="card" onclick="speakWord('libro')">libro<br><p>كتاب</p></div>
+      <div class="card" onclick="speakWord('examen')">examen<br><p>امتحان</p></div>
+      <div class="card" onclick="speakWord('clase')">clase<br><p>صف</p></div>
+      <div class="card" onclick="speakWord('asignatura')">asignatura<br><p>مادة دراسية</p></div>
+      <div class="card" onclick="speakWord('tarea')">tarea<br><p>واجب</p></div>
+      <div class="card" onclick="speakWord('beca')">beca<br><p>منحة</p></div>
+      <div class="card" onclick="speakWord('nota')">nota<br><p>درجة</p></div>
+      <div class="card" onclick="speakWord('graduación')">graduación<br><p>تخرج</p></div>
+      <div class="card" onclick="speakWord('investigación')">investigación<br><p>بحث</p></div>
+      <div class="card" onclick="speakWord('educación')">educación<br><p>تعليم</p></div>
+      <div class="card" onclick="speakWord('biblioteca')">biblioteca<br><p>مكتبة</p></div>
+      <div class="card" onclick="speakWord('campus')">campus<br><p>حرم جامعي</p></div>
+      <div class="card" onclick="speakWord('horario')">horario<br><p>جدول</p></div>
+      <div class="card" onclick="speakWord('diploma')">diploma<br><p>شهادة</p></div>
+      <div class="card" onclick="speakWord('conocimiento')">conocimiento<br><p>معرفة</p></div>
+      <div class="card" onclick="speakWord('idioma')">idioma<br><p>لغة</p></div>
+      <div class="card" onclick="speakWord('enseñanza')">enseñanza<br><p>تدريس</p></div>
+      <div class="card" onclick="speakWord('matrícula')">matrícula<br><p>تسجيل</p></div>
+      <div class="card" onclick="speakWord('calendario')">calendario<br><p>تقويم</p></div>
+      <div class="card" onclick="speakWord('clases en línea')">clases en línea<br><p>دروس عبر الإنترنت</p></div>
+      <div class="card" onclick="speakWord('universitario')">universitario<br><p>جامعي</p></div>
+      <div class="card" onclick="speakWord('seminario')">seminario<br><p>ندوة</p></div>
+      <div class="card" onclick="speakWord('presentación')">presentación<br><p>عرض تقديمي</p></div>
+      <div class="card" onclick="speakWord('tesis')">tesis<br><p>أطروحة</p></div>
+      <div class="card" onclick="speakWord('internado')">internado<br><p>تدريب داخلي</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    function speakWord(word) {
+      const speech = new SpeechSynthesisUtterance(word);
+      speech.lang = 'es-ES';  
+      window.speechSynthesis.speak(speech);
+    }
+  </script>
+</body>
+</html>

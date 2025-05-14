@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Общение с друзьями из других стран - التواصل مع أصدقاء من دول أخرى</title>
+  <link rel="shortcut icon" typr="x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+    h2 {
+      color: #007BFF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background-color: #b3d7ff;
+      padding: 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+    body.dark-mode .card {
+      background-color: #333;
+      color: white;
+    }
+    body.dark-mode header, body.dark-mode nav {
+      background-color: #333;
+    }
+
+    .toggle-btn {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .toggle-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Общение с друзьями из других стран - التواصل مع أصدقاء من دول أخرى
+    <button class="toggle-btn" onclick="toggleDarkMode()">الوضع الليلي/النهاري</button>
+  </header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="russia-goal.html">السابق</a>
+  </nav>
+
+  <div class="container">
+    <h2>المفردات الخاصة بالتواصل مع أصدقاء من دول أخرى باللغة الروسية</h2>
+    <div class="grid">
+      <div class="card" onclick="speakWord('Друзья')">Друзья<br><p>أصدقاء</p></div>
+      <div class="card" onclick="speakWord('Привет')">Привет<br><p>مرحباً</p></div>
+      <div class="card" onclick="speakWord('Как дела?')">Как дела?<br><p>كيف حالك؟</p></div>
+      <div class="card" onclick="speakWord('Поговорить')">Поговорить<br><p>التحدث</p></div>
+      <div class="card" onclick="speakWord('Международный')">Международный<br><p>دولي</p></div>
+      <div class="card" onclick="speakWord('Обмен')">Обмен<br><p>تبادل</p></div>
+      <div class="card" onclick="speakWord('Сообщения')">Сообщения<br><p>رسائل</p></div>
+      <div class="card" onclick="speakWord('Интернет')">Интернет<br><p>إنترنت</p></div>
+      <div class="card" onclick="speakWord('Чат')">Чат<br><p>دردشة</p></div>
+      <div class="card" onclick="speakWord('Смс')">Смс<br><p>رسالة نصية</p></div>
+      <div class="card" onclick="speakWord('Социальные сети')">Социальные сети<br><p>شبكات التواصل الاجتماعي</p></div>
+      <div class="card" onclick="speakWord('Общение')">Общение<br><p>التواصل</p></div>
+      <div class="card" onclick="speakWord('Глобальный')">Глобальный<br><p>عالمي</p></div>
+      <div class="card" onclick="speakWord('Письмо')">Письмо<br><p>رسالة</p></div>
+      <div class="card" onclick="speakWord('Видеозвонок')">Видеозвонок<br><p>مكالمة فيديو</p></div>
+      <div class="card" onclick="speakWord('Фотография')">Фотография<br><p>صورة</p></div>
+      <div class="card" onclick="speakWord('Мобильный телефон')">Мобильный телефон<br><p>هاتف محمول</p></div>
+      <div class="card" onclick="speakWord('Переводчик')">Переводчик<br><p>مترجم</p></div>
+      <div class="card" onclick="speakWord('Знакомства')">Знакомства<br><p>تعرف</p></div>
+      <div class="card" onclick="speakWord('Язык общения')">Язык общения<br><p>لغة التواصل</p></div>
+      <div class="card" onclick="speakWord('Культурное различие')">Культурное различие<br><p>اختلاف ثقافي</p></div>
+      <div class="card" onclick="speakWord('Праздник')">Праздник<br><p>عيد</p></div>
+      <div class="card" onclick="speakWord('Междугородний')">Междугородний<br><p>بين المدن</p></div>
+      <div class="card" onclick="speakWord('Язык тела')">Язык тела<br><p>لغة الجسد</p></div>
+      <div class="card" onclick="speakWord('Смех')">Смех<br><p>ضحك</p></div>
+      <div class="card" onclick="speakWord('Путешествие')">Путешествие<br><p>سفر</p></div>
+      <div class="card" onclick="speakWord('Иностранцы')">Иностранцы<br><p>أجانب</p></div>
+      <div class="card" onclick="speakWord('Поговорим')">Поговорим<br><p>لنحكي</p></div>
+      <div class="card" onclick="speakWord('Обмен культурой')">Обмен культурой<br><p>تبادل الثقافة</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    function speakWord(word) {
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = 'ru-RU'; 
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>

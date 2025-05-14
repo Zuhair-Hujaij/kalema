@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>اللغة التركية - السفر واستكشاف العالم</title>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav button {
+      background-color: #444;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    nav button:hover {
+      background-color: #333;
+    }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+    h2 {
+      color: #007BFF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background-color: #b3d7ff;
+      padding: 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+
+    body.night-mode {
+      background-color: #121212;
+      color: white;
+    }
+    body.night-mode .card {
+      background-color: #444;
+      color: white;
+    }
+    body.night-mode .card p {
+      color: #ddd;
+    }
+    body.night-mode header, body.night-mode nav {
+      background-color: #333;
+    }
+    body.night-mode h2 {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+  <header>اللغة التركية - السفر واستكشاف العالم</header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="turkish-goal.html">السابق</a>
+    <button onclick="toggleNightMode()">🌙 / ☀️</button>
+  </nav>
+  <div class="container">
+    <h2>السفر واستكشاف العالم</h2>
+    <div class="grid">
+      <div class="card" onclick="speakWord('uçak')">uçak<br><p>طائرة</p></div>
+      <div class="card" onclick="speakWord('havaalanı')">havaalanı<br><p>مطار</p></div>
+      <div class="card" onclick="speakWord('pasaport')">pasaport<br><p>جواز سفر</p></div>
+      <div class="card" onclick="speakWord('otel')">otel<br><p>فندق</p></div>
+      <div class="card" onclick="speakWord('bavul')">bavul<br><p>حقيبة سفر</p></div>
+      <div class="card" onclick="speakWord('harita')">harita<br><p>خريطة</p></div>
+      <div class="card" onclick="speakWord('rehber')">rehber<br><p>دليل سياحي</p></div>
+      <div class="card" onclick="speakWord('tren')">tren<br><p>قطار</p></div>
+      <div class="card" onclick="speakWord('istasyon')">istasyon<br><p>محطة</p></div>
+      <div class="card" onclick="speakWord('otobüs')">otobüs<br><p>حافلة</p></div>
+      <div class="card" onclick="speakWord('araba')">araba<br><p>سيارة</p></div>
+      <div class="card" onclick="speakWord('yol')">yol<br><p>طريق</p></div>
+      <div class="card" onclick="speakWord('köprü')">köprü<br><p>جسر</p></div>
+      <div class="card" onclick="speakWord('vize')">vize<br><p>تأشيرة</p></div>
+      <div class="card" onclick="speakWord('turist')">turist<br><p>سائح</p></div>
+      <div class="card" onclick="speakWord('seyahat')">seyahat<br><p>سفر</p></div>
+      <div class="card" onclick="speakWord('fotoğraf')">fotoğraf<br><p>صورة</p></div>
+      <div class="card" onclick="speakWord('kamp')">kamp<br><p>مخيم</p></div>
+      <div class="card" onclick="speakWord('dağ')">dağ<br><p>جبل</p></div>
+      <div class="card" onclick="speakWord('plaj')">plaj<br><p>شاطئ</p></div>
+      <div class="card" onclick="speakWord('gemi')">gemi<br><p>سفينة</p></div>
+      <div class="card" onclick="speakWord('nehir')">nehir<br><p>نهر</p></div>
+      <div class="card" onclick="speakWord('otel rezervasyonu')">otel rezervasyonu<br><p>حجز فندق</p></div>
+      <div class="card" onclick="speakWord('gezi')">gezi<br><p>رحلة</p></div>
+      <div class="card" onclick="speakWord('kıyafet')">kıyafet<br><p>ملابس</p></div>
+      <div class="card" onclick="speakWord('rehber kitap')">rehber kitap<br><p>كتاب دليل</p></div>
+      <div class="card" onclick="speakWord('alışveriş')">alışveriş<br><p>تسوق</p></div>
+      <div class="card" onclick="speakWord('müze')">müze<br><p>متحف</p></div>
+      <div class="card" onclick="speakWord('anıt')">anıt<br><p>نصب تذكاري</p></div>
+      <div class="card" onclick="speakWord('bilet')">bilet<br><p>تذكرة</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleNightMode() {
+      document.body.classList.toggle('night-mode');
+    }
+
+    function speakWord(word) {
+      var utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = 'tr-TR';
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>

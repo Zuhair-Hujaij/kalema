@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>نصوص تعليمية - الإسبانية</title>
+    <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+    <style>
+        :root {
+            --main-color: #007BFF;
+            --bg-color: #fff;
+            --text-color: #000;
+            --button-bg: #007BFF;
+            --button-hover-bg: #0056b3;
+            --navbar-bg: #007BFF;
+        }
+
+        .dark-mode {
+            --main-color: #1a1a2e;
+            --bg-color: #121212;
+            --text-color: #fff;
+            --button-bg: #1a1a2e;
+            --button-hover-bg: #4e9fff;
+            --navbar-bg: #1a1a2e;
+        }
+
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: 0.3s;
+        }
+
+        .navbar {
+            background: var(--navbar-bg);
+            display: flex;
+            justify-content: space-around;
+            padding: 14px 0;
+        }
+
+        .navbar a, .toggle-btn {
+            color: white;
+            padding: 14px;
+            text-decoration: none;
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .navbar a:hover, .toggle-btn:hover {
+            background: var(--button-hover-bg);
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        h2 {
+            color: var(--main-color);
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        button {
+            background: var(--button-bg);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--button-hover-bg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">الرئيسية</a>
+        <a href="tools.html">السابق</a>
+        <button class="toggle-btn" onclick="toggleMode()">🌓 الوضع الليلي</button>
+    </div>
+
+    <div class="content">
+        <h2>Texto educativo en español</h2>
+        <button onclick="speakText('spanishText', 'es')">🔊 استمع للنص الإسباني</button>
+        <p id="spanishText">
+            La vida es una serie de oportunidades que nos brindan la oportunidad de crecer y aprender. Cada experiencia,
+            ya sea buena o mala, tiene algo que enseñarnos. Aprender a enfrentarlas nos convierte en personas más sabias
+            y capaces de aprovechar lo que el futuro nos ofrece. ¡Nunca dejes de aprender!
+        </p>
+
+        <h2>النص المترجم إلى العربية</h2>
+        <button onclick="speakText('arabicText', 'ar')">🔊 استمع للنص العربي</button>
+        <p id="arabicText">
+            الحياة هي سلسلة من الفرص التي تمنحنا فرصة للنمو والتعلم. كل تجربة، سواء كانت جيدة أو سيئة،
+            تحمل شيئًا يمكن أن نتعلمه. تعلم كيفية مواجهة هذه التجارب يجعلنا أشخاصًا أكثر حكمة وقدرة
+            على الاستفادة مما يقدمه لنا المستقبل. لا تتوقف أبدًا عن التعلم!
+        </p>
+    </div>
+
+    <script>
+        function speakText(elementId, lang) {
+            const text = document.getElementById(elementId).innerText;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            speechSynthesis.speak(utterance);
+        }
+
+        function toggleMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+
+</body>
+</html>

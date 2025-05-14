@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>اللغة التركية - فهم الثقافات الجديدة</title>
+  <link rel="shortcut icon" type="x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    :root {
+      --main-color: #007BFF;
+      --bg-color: #e6f9fa;
+      --text-color: #000;
+      --card-bg-color: #b3d7ff;
+      --navbar-bg: #007BFF;
+    }
+
+    .dark-mode {
+      --main-color: #1a1a2e;
+      --bg-color: #121212;
+      --text-color: #fff;
+      --card-bg-color: #333;
+      --navbar-bg: #1a1a2e;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: 0.3s;
+    }
+
+    header {
+      background-color: var(--navbar-bg);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: var(--navbar-bg);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .toggle-btn {
+      background: none;
+      color: white;
+      border: none;
+      padding: 14px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .toggle-btn:hover {
+      background: #0056b3;
+    }
+
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--main-color);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: var(--card-bg-color);
+      padding: 20px;
+      border-radius: 10px;
+      color: var(--main-color);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+  <header>اللغة التركية - فهم الثقافات الجديدة</header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="turkish-goal.html">السابق</a>
+    <button class="toggle-btn" onclick="toggleMode()">🌓 الوضع الليلي</button>
+  </nav>
+  <div class="container">
+    <h2>فهم الثقافات الجديدة</h2>
+    <div class="grid">
+      <div class="card" onclick="speak('kültür')">kültür<br><p>ثقافة</p></div>
+      <div class="card" onclick="speak('gelenek')">gelenek<br><p>تقاليد</p></div>
+      <div class="card" onclick="speak('bayram')">bayram<br><p>عيد</p></div>
+      <div class="card" onclick="speak('müzik')">müzik<br><p>موسيقى</p></div>
+      <div class="card" onclick="speak('dans')">dans<br><p>رقص</p></div>
+      <div class="card" onclick="speak('sanat')">sanat<br><p>فن</p></div>
+      <div class="card" onclick="speak('tiyatro')">tiyatro<br><p>مسرح</p></div>
+      <div class="card" onclick="speak('film')">film<br><p>فيلم</p></div>
+      <div class="card" onclick="speak('şiir')">şiir<br><p>شعر</p></div>
+      <div class="card" onclick="speak('edebiyat')">edebiyat<br><p>أدب</p></div>
+      <div class="card" onclick="speak('tarih')">tarih<br><p>تاريخ</p></div>
+      <div class="card" onclick="speak('dil')">dil<br><p>لغة</p></div>
+      <div class="card" onclick="speak('sergi')">sergi<br><p>معرض</p></div>
+      <div class="card" onclick="speak('mutfak')">mutfak<br><p>مطبخ</p></div>
+      <div class="card" onclick="speak('yemek')">yemek<br><p>طعام</p></div>
+      <div class="card" onclick="speak('giyim')">giyim<br><p>ملابس</p></div>
+      <div class="card" onclick="speak('festival')">festival<br><p>مهرجان</p></div>
+      <div class="card" onclick="speak('müze')">müze<br><p>متحف</p></div>
+      <div class="card" onclick="speak('anıt')">anıt<br><p>نصب تذكاري</p></div>
+      <div class="card" onclick="speak('folklor')">folklor<br><p>فلكلور</p></div>
+      <div class="card" onclick="speak('resim')">resim<br><p>رسم</p></div>
+      <div class="card" onclick="speak('heykel')">heykel<br><p>تمثال</p></div>
+      <div class="card" onclick="speak('ritüel')">ritüel<br><p>طقس</p></div>
+      <div class="card" onclick="speak('hikaye')">hikaye<br><p>قصة</p></div>
+      <div class="card" onclick="speak('alışkanlık')">alışkanlık<br><p>عادة</p></div>
+      <div class="card" onclick="speak('misafirperverlik')">misafirperverlik<br><p>كرم الضيافة</p></div>
+      <div class="card" onclick="speak('değer')">değer<br><p>قيمة</p></div>
+      <div class="card" onclick="speak('inanç')">inanç<br><p>معتقد</p></div>
+      <div class="card" onclick="speak('kutlama')">kutlama<br><p>احتفال</p></div>
+      <div class="card" onclick="speak('yöresel')">yöresel<br><p>محلي</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'tr-TR'; 
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>اللغة التركية - تقوية الذاكرة والقدرات الذهنية</title>
+  <link rel="shortcut icon" type="x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    :root {
+      --main-color: #007BFF;
+      --bg-color: #e6f9fa;
+      --text-color: #000;
+      --card-bg-color: #b3d7ff;
+      --navbar-bg: #007BFF;
+    }
+
+    .dark-mode {
+      --main-color: #1a1a2e;
+      --bg-color: #121212;
+      --text-color: #fff;
+      --card-bg-color: #333;
+      --navbar-bg: #1a1a2e;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: 0.3s;
+    }
+
+    header {
+      background-color: var(--navbar-bg);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: var(--navbar-bg);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .toggle-btn {
+      background: none;
+      color: white;
+      border: none;
+      padding: 14px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .toggle-btn:hover {
+      background: #0056b3;
+    }
+
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--main-color);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: var(--card-bg-color);
+      padding: 20px;
+      border-radius: 10px;
+      color: var(--main-color);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    اللغة التركية - تقوية الذاكرة والقدرات الذهنية
+  </header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="turkish-goal.html">السابق</a>
+    <button class="toggle-btn" onclick="toggleMode()">🌓 الوضع الليلي</button>
+  </nav>
+  <div class="container">
+    <h2>تقوية الذاكرة والقدرات الذهنية</h2>
+    <div class="grid">
+      <div class="card" onclick="speakWord('hafıza')">hafıza<br><p>ذاكرة</p></div>
+      <div class="card" onclick="speakWord('zeka')">zeka<br><p>ذكاء</p></div>
+      <div class="card" onclick="speakWord('düşünmek')">düşünmek<br><p>يفكر</p></div>
+      <div class="card" onclick="speakWord('odaklanmak')">odaklanmak<br><p>يركز</p></div>
+      <div class="card" onclick="speakWord('problem çözme')">problem çözme<br><p>حل المشكلات</p></div>
+      <div class="card" onclick="speakWord('mantık')">mantık<br><p>منطق</p></div>
+      <div class="card" onclick="speakWord('bulmaca')">bulmaca<br><p>لغز</p></div>
+      <div class="card" onclick="speakWord('satranç')">satranç<br><p>شطرنج</p></div>
+      <div class="card" onclick="speakWord('yoga')">yoga<br><p>يوغا</p></div>
+      <div class="card" onclick="speakWord('meditasyon')">meditasyon<br><p>تأمل</p></div>
+      <div class="card" onclick="speakWord('spor')">spor<br><p>رياضة</p></div>
+      <div class="card" onclick="speakWord('kitap okumak')">kitap okumak<br><p>قراءة كتاب</p></div>
+      <div class="card" onclick="speakWord('müzik dinlemek')">müzik dinlemek<br><p>الاستماع للموسيقى</p></div>
+      <div class="card" onclick="speakWord('uyku')">uyku<br><p>نوم</p></div>
+      <div class="card" onclick="speakWord('beslenme')">beslenme<br><p>تغذية</p></div>
+      <div class="card" onclick="speakWord('alışkanlık')">alışkanlık<br><p>عادة</p></div>
+      <div class="card" onclick="speakWord('planlama')">planlama<br><p>تخطيط</p></div>
+      <div class="card" onclick="speakWord('öğrenmek')">öğrenmek<br><p>يتعلم</p></div>
+      <div class="card" onclick="speakWord('yenilik')">yenilik<br><p>ابتكار</p></div>
+      <div class="card" onclick="speakWord('motivasyon')">motivasyon<br><p>تحفيز</p></div>
+      <div class="card" onclick="speakWord('zaman yönetimi')">zaman yönetimi<br><p>إدارة الوقت</p></div>
+      <div class="card" onclick="speakWord('sakinlik')">sakinlik<br><p>هدوء</p></div>
+      <div class="card" onclick="speakWord('tekrar')">tekrar<br><p>مراجعة</p></div>
+      <div class="card" onclick="speakWord('uygulama')">uygulama<br><p>تطبيق</p></div>
+      <div class="card" onclick="speakWord('dikkat')">dikkat<br><p>انتباه</p></div>
+      <div class="card" onclick="speakWord('gözlem')">gözlem<br><p>ملاحظة</p></div>
+      <div class="card" onclick="speakWord('analiz')">analiz<br><p>تحليل</p></div>
+      <div class="card" onclick="speakWord('karar verme')">karar verme<br><p>اتخاذ القرار</p></div>
+      <div class="card" onclick="speakWord('reaksiyon')">reaksiyon<br><p>رد فعل</p></div>
+      <div class="card" onclick="speakWord('hafıza oyunu')">hafıza oyunu<br><p>لعبة الذاكرة</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    function speakWord(word) {
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = 'tr-TR'; 
+      window.speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>

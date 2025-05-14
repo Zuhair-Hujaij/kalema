@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>💼 تطوير مهاراتك المهنية</title>
+  <link rel="shortcut icon" type="x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #e6f9fa;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: #007BFF;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .theme-toggle {
+      background-color: white;
+      color: #007BFF;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #007BFF;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #b3d7ff;
+      padding: 20px;
+      border-radius: 10px;
+      color: #007BFF;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+
+    .card p {
+      margin: 5px 0 0;
+      font-weight: normal;
+    }
+
+    body.dark {
+      background-color: #1e1e1e;
+      color: white;
+    }
+
+    body.dark h2 {
+      color: #66b2ff;
+    }
+
+    body.dark .card {
+      background-color: #2a2a2a;
+      color: #66b2ff;
+    }
+
+    body.dark .theme-toggle {
+      background-color: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>💼 تطوير مهاراتك المهنية</header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="spanich-goal.html">السابق</a>
+    <button class="theme-toggle" onclick="toggleTheme()">الوضع الليلي 🌙</button>
+  </nav>
+  <div class="container">
+    <h2>Vocabulario</h2>
+    <div class="grid">
+      <div class="card" onclick="speak('trabajo')">trabajo<br><p>عمل</p></div>
+      <div class="card" onclick="speak('empleo')">empleo<br><p>وظيفة</p></div>
+      <div class="card" onclick="speak('jefe')">jefe<br><p>رئيس</p></div>
+      <div class="card" onclick="speak('compañía')">compañía<br><p>شركة</p></div>
+      <div class="card" onclick="speak('entrevista')">entrevista<br><p>مقابلة</p></div>
+      <div class="card" onclick="speak('currículum')">currículum<br><p>سيرة ذاتية</p></div>
+      <div class="card" onclick="speak('experiencia')">experiencia<br><p>خبرة</p></div>
+      <div class="card" onclick="speak('habilidades')">habilidades<br><p>مهارات</p></div>
+      <div class="card" onclick="speak('negocio')">negocio<br><p>تجارة</p></div>
+      <div class="card" onclick="speak('éxito')">éxito<br><p>نجاح</p></div>
+      <div class="card" onclick="speak('profesión')">profesión<br><p>مهنة</p></div>
+      <div class="card" onclick="speak('objetivo')">objetivo<br><p>هدف</p></div>
+      <div class="card" onclick="speak('reunión')">reunión<br><p>اجتماع</p></div>
+      <div class="card" onclick="speak('proyecto')">proyecto<br><p>مشروع</p></div>
+      <div class="card" onclick="speak('promoción')">promoción<br><p>ترقية</p></div>
+      <div class="card" onclick="speak('salario')">salario<br><p>راتب</p></div>
+      <div class="card" onclick="speak('aumento')">aumento<br><p>زيادة</p></div>
+      <div class="card" onclick="speak('empleador')">empleador<br><p>صاحب عمل</p></div>
+      <div class="card" onclick="speak('equipo')">equipo<br><p>فريق</p></div>
+      <div class="card" onclick="speak('liderazgo')">liderazgo<br><p>قيادة</p></div>
+      <div class="card" onclick="speak('responsabilidad')">responsabilidad<br><p>مسؤولية</p></div>
+      <div class="card" onclick="speak('eficiencia')">eficiencia<br><p>كفاءة</p></div>
+      <div class="card" onclick="speak('desempeño')">desempeño<br><p>أداء</p></div>
+      <div class="card" onclick="speak('contrato')">contrato<br><p>عقد</p></div>
+      <div class="card" onclick="speak('oportunidad')">oportunidad<br><p>فرصة</p></div>
+      <div class="card" onclick="speak('red')">red<br><p>شبكة علاقات</p></div>
+      <div class="card" onclick="speak('formación')">formación<br><p>تدريب</p></div>
+      <div class="card" onclick="speak('evaluación')">evaluación<br><p>تقييم</p></div>
+      <div class="card" onclick="speak('objetivos')">objetivos<br><p>أهداف</p></div>
+      <div class="card" onclick="speak('crecimiento')">crecimiento<br><p>نمو</p></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const button = document.querySelector('.theme-toggle');
+      if (document.body.classList.contains('dark')) {
+        button.textContent = 'الوضع النهاري ☀️';
+      } else {
+        button.textContent = 'الوضع الليلي 🌙';
+      }
+    }
+
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'es-ES'; 
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>

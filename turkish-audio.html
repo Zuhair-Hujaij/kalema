@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>الحروف التركية - الاستماع</title>
+  <link rel="shortcut icon" type="x-icon" href="C:\website\website\image\logo.png">
+  <style>
+    :root {
+      --main-color: #007BFF;
+      --bg-color: #e6f9fa;
+      --text-color: #000;
+      --card-bg-color: white;
+      --navbar-bg: #007BFF;
+    }
+
+    .dark-mode {
+      --main-color: #1a1a2e;
+      --bg-color: #121212;
+      --text-color: #fff;
+      --card-bg-color: #333;
+      --navbar-bg: #1a1a2e;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: 0.3s;
+    }
+
+    header {
+      background-color: var(--navbar-bg);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: var(--navbar-bg);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--main-color);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: var(--card-bg-color);
+      border: 2px solid var(--main-color);
+      padding: 20px;
+      border-radius: 10px;
+      color: var(--main-color);
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      background-color: #cce5ff;
+    }
+
+    .toggle-btn {
+      background: none;
+      color: white;
+      border: none;
+      padding: 14px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .toggle-btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>الحروف التركية - استمع وتعلّم</div>
+  
+  <nav>
+    <a href="#alphabet">الأحرف التركية</a>
+    <a href="#vocabulary">المفردات</a>
+    <a href="#grammar">القواعد</a>
+    <button class="toggle-btn" onclick="toggleMode()">🌓 الوضع الليلي</button>
+  </nav>
+</header>
+
+<div class="container" id="alphabet">
+  <h2>انقر على الحرف للاستماع إلى نطقه</h2>
+ 
+  <div class="grid">
+    <div class="card" onclick="speak('A')">A</div>
+    <div class="card" onclick="speak('B')">B</div>
+    <div class="card" onclick="speak('C')">C</div>
+    <div class="card" onclick="speak('Ç')">Ç</div>
+    <div class="card" onclick="speak('D')">D</div>
+    <div class="card" onclick="speak('E')">E</div>
+    <div class="card" onclick="speak('F')">F</div>
+    <div class="card" onclick="speak('G')">G</div>
+    <div class="card" onclick="speak('Ğ')">Ğ</div>
+    <div class="card" onclick="speak('H')">H</div>
+    <div class="card" onclick="speak('I')">I</div>
+    <div class="card" onclick="speak('İ')">İ</div>
+    <div class="card" onclick="speak('J')">J</div>
+    <div class="card" onclick="speak('K')">K</div>
+    <div class="card" onclick="speak('L')">L</div>
+    <div class="card" onclick="speak('M')">M</div>
+    <div class="card" onclick="speak('N')">N</div>
+    <div class="card" onclick="speak('O')">O</div>
+    <div class="card" onclick="speak('Ö')">Ö</div>
+    <div class="card" onclick="speak('P')">P</div>
+    <div class="card" onclick="speak('R')">R</div>
+    <div class="card" onclick="speak('S')">S</div>
+    <div class="card" onclick="speak('Ş')">Ş</p></div>
+    <div class="card" onclick="speak('T')">T</div>
+    <div class="card" onclick="speak('U')">U</div>
+    <div class="card" onclick="speak('Ü')">Ü</div>
+    <div class="card" onclick="speak('V')">V</div>
+    <div class="card" onclick="speak('Y')">Y</div>
+    <div class="card" onclick="speak('Z')">Z</div>
+  </div>
+</div>
+
+<script>
+  function speak(letter) {
+    const utterance = new SpeechSynthesisUtterance(letter);
+    utterance.lang = 'tr-TR'; 
+    window.speechSynthesis.speak(utterance); 
+  }
+
+  function toggleMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+</script>
+
+</body>
+</html>

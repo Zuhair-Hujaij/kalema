@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لعبة تعليمية - مطابقة الكلمات</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      color: #007BFF;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .navbar {
+      background-color: #007BFF;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    .mode-toggle {
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-left: 20px;
+    }
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+    .select-container {
+      margin-bottom: 20px;
+    }
+    .game-section {
+      display: none;
+      margin-top: 20px;
+    }
+    .card {
+      background-color: #ffffff;
+      border: 2px solid #007BFF;
+      padding: 10px;
+      display: inline-block;
+      margin: 10px;
+      cursor: pointer;
+      min-width: 80px;
+    }
+    .card.matched {
+      background-color: #b3d9ff;
+      pointer-events: none;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .message {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .correct {
+      color: green;
+    }
+    .incorrect {
+      color: red;
+    }
+    .score {
+      font-size: 20px;
+      font-weight: bold;
+      color: #007BFF;
+      margin-bottom: 15px;
+    }
+    .timer {
+      font-size: 18px;
+      font-weight: bold;
+      color: #FF4500;
+      margin-bottom: 10px;
+    }
+
+    /* وضع الليلي */
+    body.night-mode {
+      background-color: #333;
+      color: #fff;
+    }
+    body.night-mode .navbar {
+      background-color: #222;
+    }
+    body.night-mode .card {
+      background-color: #555;
+      border-color: #fff;
+    }
+    body.night-mode button {
+      background-color: #444;
+    }
+    body.night-mode .message {
+      color: #fff;
+    }
+    body.night-mode .score,
+    body.night-mode .timer {
+      color: #ffeb3b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html">الرئيسية</a>
+    <a href="vocabulary-quiz.html">إختبار المفردات</a>
+    <a href="sentence-arrangment.html">ترتيب الجمل</a>
+    <span class="mode-toggle" onclick="toggleMode()">الوضع الليلي</span>
+  </div>
+
+  <div class="content">
+    <h1>🌍 لعبة مطابقة الكلمات</h1>
+    <div class="select-container">
+      <label for="language">اختر اللغة:</label>
+      <select id="language">
+        <option value="en">الإنجليزية</option>
+        <option value="fr">الفرنسية</option>
+        <option value="es">الإسبانية</option>
+        <option value="zh">الصينية</option>
+        <option value="ru">الروسية</option>
+        <option value="tr">التركية</option>
+      </select>
+
+      <label for="level" style="margin-left:20px;">اختر المستوى:</label>
+      <select id="level">
+        <option value="easy">سهل</option>
+        <option value="medium">متوسط</option>
+        <option value="hard">صعب</option>
+      </select>
+
+      <button onclick="startGame()">ابدأ</button>
+    </div>
+
+    <div class="game-section" id="game">
+      <div id="score" class="score">النقاط: 0</div>
+      <div id="timer" class="timer">الوقت: 0 ثانية</div>
+      <h2>طابق الكلمات</h2>
+      <div id="cards-container"></div>
+      <div id="message" class="message"></div>
+      <button onclick="resetGame()">إعادة اللعبة</button>
+    </div>
+  </div>
+
+  <script>
+    const wordSets = {
+      en: [['cat', 'قط'], ['apple', 'تفاحة'], ['car', 'سيارة'], ['book', 'كتاب'], ['house', 'منزل'],
+        ['dog', 'كلب'], ['water', 'ماء'], ['sun', 'شمس'], ['tree', 'شجرة'], ['school', 'مدرسة'],
+        ['bread', 'خبز'], ['milk', 'حليب'], ['chair', 'كرسي'], ['table', 'طاولة'], ['phone', 'هاتف'],
+        ['window', 'نافذة'], ['door', 'باب'], ['pen', 'قلم'], ['teacher', 'معلم'], ['student', 'طالب']],
+
+      // (اللغات الأخرى)
+    };
+
+    const messages = {
+      en: { correct: 'Correct!', incorrect: 'Wrong!' },
+      // (رسائل اللغات الأخرى)
+    };
+
+    let selectedLang = 'en';
+    let selectedLevel = 'easy';
+    let firstCard = null;
+    let score = 0;
+    let timer;
+    let timeLeft;
+
+    function startGame() {
+      selectedLang = document.getElementById('language').value;
+      selectedLevel = document.getElementById('level').value;
+      score = 0;
+      updateScore();
+      document.getElementById('game').style.display = 'block';
+      document.getElementById('message').innerText = '';
+      startTimer();
+      generateCards();
+    }
+
+    function updateScore() {
+      document.getElementById('score').innerText = `النقاط: ${score}`;
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      if (selectedLevel === 'easy') timeLeft = 60;
+      else if (selectedLevel === 'medium') timeLeft = 90;
+      else if (selectedLevel === 'hard') timeLeft = 120;
+
+      document.getElementById('timer').innerText = `الوقت: ${timeLeft} ثانية`;
+
+      timer = setInterval(() => {
+        timeLeft--;
+        document.getElementById('timer').innerText = `الوقت: ${timeLeft} ثانية`;
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          endGame();
+        }
+      }, 1000);
+    }
+
+    function endGame() {
+      document.getElementById('message').innerText = '⏰ أرجو إعادة المحاولة';
+      document.getElementById('message').className = 'message incorrect';
+      Array.from(document.querySelectorAll('.card')).forEach(card => {
+        card.onclick = null;
+      });
+    }
+
+    function resetGame() {
+      clearInterval(timer);
+      document.getElementById('game').style.display = 'none';
+      document.getElementById('cards-container').innerHTML = '';
+      document.getElementById('message').innerText = '';
+    }
+
+    function generateCards() {
+      const container = document.getElementById('cards-container');
+      container.innerHTML = '';
+      document.getElementById('message').innerText = '';
+      firstCard = null;
+
+      let limit = 5;
+      if (selectedLevel === 'medium') limit = 10;
+      else if (selectedLevel === 'hard') limit = 20;
+
+      const words = wordSets[selectedLang].slice(0, limit);
+      let pairs = [];
+
+      words.forEach(([foreign, arabic]) => {
+        pairs.push({ text: foreign, pair: arabic });
+        pairs.push({ text: arabic, pair: foreign });
+      });
+
+      pairs = pairs.sort(() => 0.5 - Math.random());
+
+      pairs.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerText = item.text;
+        card.dataset.pair = item.pair;
+        card.onclick = () => selectCard(card);
+        container.appendChild(card);
+      });
+    }
+
+    function selectCard(card) {
+      if (card.classList.contains('matched') || card === firstCard || timeLeft <= 0) return;
+
+      card.style.backgroundColor = '#cce6ff';
+
+      if (!firstCard) {
+        firstCard = card;
+      } else {
+        const messageEl = document.getElementById('message');
+        if (card.dataset.pair === firstCard.innerText || firstCard.dataset.pair === card.innerText) {
+          card.classList.add('matched');
+          firstCard.classList.add('matched');
+          score++;
+          updateScore();
+          messageEl.innerText = messages[selectedLang].correct;
+          messageEl.className = 'message correct';
+          firstCard = null;
+          checkWinCondition();
+        } else {
+          const tempFirst = firstCard;
+          messageEl.innerText = messages[selectedLang].incorrect;
+          messageEl.className = 'message incorrect';
+          setTimeout(() => {
+            card.style.backgroundColor = '#fff';
+            tempFirst.style.backgroundColor = '#fff';
+            messageEl.innerText = '';
+          }, 1000);
+          firstCard = null;
+        }
+      }
+    }
+
+    function checkWinCondition() {
+      const allMatched = Array.from(document.querySelectorAll('.card')).every(card =>
+        card.classList.contains('matched')
+      );
+      if (allMatched) {
+        clearInterval(timer);
+        document.getElementById('message').innerText = '🎉 لقد نجحت!';
+        document.getElementById('message').className = 'message correct';
+      }
+    }
+
+    function toggleMode() {
+      document.body.classList.toggle('night-mode');
+      const modeBtn = document.querySelector('.mode-toggle');
+      modeBtn.innerText = document.body.classList.contains('night-mode') ? 'الوضع النهاري' : 'الوضع الليلي';
+    }
+  </script>
+</body>
+</html>

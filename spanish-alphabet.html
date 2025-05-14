@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="C:\website\website\image\logo.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spanish Alphabet</title>
+  <style>
+    :root {
+      --main-color: #007BFF;
+      --bg-color: linear-gradient(135deg, #e0f7fa, #fff);
+      --text-color: #000;
+      --letter-bg: #b3d7ff;
+      --letter-text: #007BFF;
+    }
+
+    .dark-mode {
+      --main-color: #1a1a2e;
+      --bg-color: #121212;
+      --text-color: #fff;
+      --letter-bg: #2a2a2a;
+      --letter-text: #4e9fff;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      transition: 0.3s;
+    }
+    header {
+      background-color: var(--main-color);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: var(--main-color);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a, .toggle-btn {
+      color: white;
+      text-decoration: none;
+      margin: 10px 15px;
+      font-weight: bold;
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 5px;
+    }
+    nav a:hover, .toggle-btn:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 30px;
+      text-align: center;
+    }
+    .alphabet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .letter {
+      background-color: var(--letter-bg);
+      color: var(--letter-text);
+      padding: 15px 20px;
+      font-size: 24px;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .letter:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Spanish Alphabet - حروف اللغة الإسبانية</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="spanich-grammar-level.html">القواعد</a>
+    <a href="spanish-audio.html">الاستماع</a>
+    <a href="spanich-goal.html">مفردات</a>
+    <button class="toggle-btn" onclick="toggleMode()">🌓 الوضع الليلي</button>
+  </nav>
+
+  <main>
+    <h2 style="color: var(--main-color);">El Alfabeto Español</h2>
+    <div class="alphabet">
+      <div class="letter">A</div>
+      <div class="letter">B</div>
+      <div class="letter">C</div>
+      <div class="letter">D</div>
+      <div class="letter">E</div>
+      <div class="letter">F</div>
+      <div class="letter">G</div>
+      <div class="letter">H</div>
+      <div class="letter">I</div>
+      <div class="letter">J</div>
+      <div class="letter">K</div>
+      <div class="letter">L</div>
+      <div class="letter">LL</div>
+      <div class="letter">M</div>
+      <div class="letter">N</div>
+      <div class="letter">Ñ</div>
+      <div class="letter">O</div>
+      <div class="letter">P</div>
+      <div class="letter">Q</div>
+      <div class="letter">R</div>
+      <div class="letter">RR</div>
+      <div class="letter">S</div>
+      <div class="letter">T</div>
+      <div class="letter">U</div>
+      <div class="letter">V</div>
+      <div class="letter">W</div>
+      <div class="letter">X</div>
+      <div class="letter">Y</div>
+      <div class="letter">Z</div>
+    </div>
+  </main>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>
